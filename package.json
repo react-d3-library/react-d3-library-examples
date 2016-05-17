@@ -1,5 +1,5 @@
 {
-  "name": "react-d3-library",
+  "name": "react-d3-library-demo",
   "version": "1.0.0",
   "description": "Accessibility of the data visualization library D3 in React.",
   "main": "server.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-d3-library/react-d3-library.git"
+    "url": "git+https://github.com/react-d3-library/react-d3-library-examples.git"
   },
   "keywords": [
     "d3",
@@ -21,9 +21,9 @@
   "author": "Andrew Burke, Daniel Lee, David Loyst",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/react-d3-library/react-d3-library/issues"
+    "url": "https://github.com/react-d3-library/react-d3-library-examples/issues"
   },
-  "homepage": "https://github.com/react-d3-library/react-d3-library#readme",
+  "homepage": "https://github.com/react-d3-library/react-d3-library-examples#readme",
   "devDependencies": {
     "babel-core": "^6.8.0",
     "babel-eslint": "^6.0.4",
