@@ -1,6 +1,6 @@
 import React from 'react';
 const d3DataToJSX = require('./../../../react-d3/d3DataToJSX');
-const D3ChildContainer = require('./d3ChildContainer');
+const ChildComponent = require('./ChildComponent');
 const d3 = require('d3');
 
 function createAreaChart(data) {
@@ -69,24 +69,24 @@ function createAreaChart(data) {
     .style("text-anchor", "end")
     .text(data.y_display_name);
 
-  return div 
+  return div
 }
 
 module.exports = React.createClass({
 
   getInitialState: function() {
-    return {d3: [], data: []}
+    return {d3DOM: [], state: []}
   },
 
   componentWillReceiveProps: function(nextProps) {
       let d3Data = d3DataToJSX(createAreaChart(nextProps.data));
-      this.setState({d3: d3Data.mappedData, data: d3Data.state})
+       this.setState({d3DOM: d3Data.mappedData, state: d3Data.state})
   },
 
   render: function() {
     return (
       <div>
-        <D3ChildContainer data={this.state} />
+        <ChildComponent data={this.state} />
       </div>
     )
   }
