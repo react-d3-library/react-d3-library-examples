@@ -12,9 +12,8 @@ body {
   text-align: center;
 }*/
 
-body {
-  font-size: 10px;
-  font-family: sans-serif;
+path, line {
+  stroke: #777;
 }
 
 .navbar {
