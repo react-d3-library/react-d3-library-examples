@@ -22,6 +22,9 @@ module.exports = React.createClass({
           <li><Link to="/scatterPlot">Scatter Plot</Link></li>
           <li><Link to="/areaChart">Area Chart</Link></li>
           <li><Link to="/lineChart">Line Chart</Link></li>
+          <li><Link to="/binarytree">Binary Tree</Link></li>
+          <li><Link to="/chainedTransitions">Chained Transitions</Link></li>
+          <li><Link to="/rainDrops">Rain Drops</Link></li>
         </nav>
       </div>
     )
