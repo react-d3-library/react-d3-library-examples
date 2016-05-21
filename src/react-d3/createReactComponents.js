@@ -8,6 +8,7 @@ import React from 'react';
 //TextContent is always passed as a child, if null react ignores it
 function makeChildNodes(reactData, stateData) {
 
+
   return reactData.map((obj, i) => {
 
     return obj.children.length === 0

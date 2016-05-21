@@ -15,6 +15,7 @@ var PieChart = require('./components/convertPieChart');
 var ScatterPlot = require('./components/convertScatterPlot');
 var AreaChart = require('./components/convertAreaChart');
 var LineChart = require('./components/convertLineChart');
+var ChainedTransitions = require('./components/convertChainedTransitions');
 
 module.exports = (
   <Router history={browserHistory} >
@@ -33,6 +34,7 @@ module.exports = (
       <Route path='scatterPlot' component={ScatterPlot} />
       <Route path='areaChart' component={AreaChart} />
       <Route path='lineChart' component={LineChart} />
+      <Route path='chainedTransitions' component={ChainedTransitions} />
     </Route>
   </Router>
 )

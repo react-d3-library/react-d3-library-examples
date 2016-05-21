@@ -22,6 +22,10 @@ module.exports = (nodes) => {
       output['__data__'] = obj['__data__']
     }
 
+    if(obj['__transition__']) {
+      output['__transition__'] = obj['__transition__']
+    }
+
     //HTML tag name ...div, g, circle, etc...
     output.tag = obj.localName;
 

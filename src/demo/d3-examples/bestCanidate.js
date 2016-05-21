@@ -19,7 +19,6 @@ var canvas = d3.select(div).append("canvas")
     .attr("height", height);
 
 var context = canvas.node().getContext("2d");
-
 var image = new Image;
 image.src = "IMG_1736.JPG";
 image.onload = start;
@@ -41,6 +40,7 @@ function start() {
 }
 
 function bestCandidateSampler(width, height, numCandidates, numSamplesMax) {
+
   var numSamples = 0;
 
   var quadtree = d3.geom.quadtree()

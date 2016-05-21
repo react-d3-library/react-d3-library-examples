@@ -1,9 +1,8 @@
 import React from 'react';
-import node from './../d3-examples/bubbleChart';
+import node from './../d3-examples/chainedTransitions';
 import D3StateContainer from './d3Components/d3StateContainer';
 
 module.exports = React.createClass({
-
   getInitialState: function() {
     return {d3: ''}
   },
@@ -13,7 +12,6 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    console.log(node)
     return (
       <div>
         <D3StateContainer data={this.state.d3} />
