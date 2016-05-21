@@ -1,5 +1,5 @@
 module.exports = (obj, stateData) => {
-  var reactId = obj.props['__react-d3-id']
+  var reactId = obj.props['data-react-d3-id']
 
   if(stateData[reactId] instanceof Object) {
     for(var key in stateData[reactId]) {
