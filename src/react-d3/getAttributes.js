@@ -21,8 +21,8 @@ module.exports = (attributesObject, node) => {
     if(key !== 'undefined') attributes[key] = eventHandlers[key]
   }
 
-  if(node['__react-d3-id']) {
-    attributes['__react-d3-id'] = node['__react-d3-id']
+  if(node['data-react-d3-id']) {
+    attributes['data-react-d3-id'] = node['data-react-d3-id']
   }
 
   if(node['__data__']) {
@@ -32,6 +32,7 @@ module.exports = (attributesObject, node) => {
    if(node['__transition__']) {
     attributes['__transition__'] = node['__transition__'];
   }
+
 
   return attributes;
 }

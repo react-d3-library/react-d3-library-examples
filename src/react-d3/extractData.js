@@ -29,7 +29,7 @@ module.exports = (nodes) => {
     //HTML tag name ...div, g, circle, etc...
     output.tag = obj.localName;
 
-    if(!obj['__react-d3-id']) {
+    if(!obj['data-react-d3-id']) {
       nodeId = applyD3ReactId(Array.prototype.slice.call(obj.children), i)
       for(var key in nodeId.state) {
         extractedData.state[key] = nodeId.state[key]
@@ -54,12 +54,12 @@ module.exports = (nodes) => {
     if(output.tag === 'text') output.props.textContent = obj.childNodes[0].data;
 
     // output.props['react-d3-id'] = output.tag + '.' + counter + '.' + i;\
-    if(!obj['__react-d3-id']) {
-      output['__react-d3-id'] = output.tag + '.' + i + '.' + 0 + '.' + 0;
+    if(!obj['data-react-d3-id']) {
+      output['data-react-d3-id'] = output.tag + '.' + i + '.' + 0 + '.' + 0;
       output.props.key = output.tag + '.' + i + '.' + 0 + '.' + 0;
     } else {
-      output['__react-d3-id'] = obj['__react-d3-id'];
-      output.props.key = obj['__react-d3-id'];
+      output['data-react-d3-id'] = obj['data-react-d3-id'];
+      output.props.key = obj['data-react-d3-id'];
     }
 
     return output;

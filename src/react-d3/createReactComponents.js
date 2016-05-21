@@ -1,6 +1,5 @@
 const extractData = require('./extractData');
 const passReactState = require('./passReactState');
-
 import React from 'react';
 
 //Recurssively create all nested React components with reactData
@@ -17,7 +16,7 @@ function makeChildNodes(reactData, stateData) {
           React.createElement(
             obj.tag,
             passReactState(obj, stateData),
-            obj.props.textContent),
+            obj.props.textContent)
         )
 
       : React.createElement(obj.tag, obj.props, extractData(obj.children).mappedData.map(obj => makeChildNodes([obj], stateData)))

@@ -14,6 +14,6 @@ node.enter().append("circle")
   .attr("transform", function(d) { return "translate("+d*4+",200)"; })
   .attr("r", function(d) { return d*2; })
   .attr("fill", function(d) { return "blue"; })
-  .on("click", function(d){ console.log( arguments ) })
+  .on("click", function(d){ console.log(arguments) })
 
 module.exports = div

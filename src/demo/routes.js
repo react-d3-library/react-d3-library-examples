@@ -16,10 +16,13 @@ var ScatterPlot = require('./components/convertScatterPlot');
 var AreaChart = require('./components/convertAreaChart');
 var LineChart = require('./components/convertLineChart');
 var ChainedTransitions = require('./components/convertChainedTransitions');
+var BinaryTree = require('./components/binaryTree');
+
 
 module.exports = (
   <Router history={browserHistory} >
     <Route path='/' component={App}>
+      <Route path='binaryTree' component={BinaryTree} />
       <Route path='bubbleChart' component={BubbleChart} />
       <Route path='circleEventHandler' component={CircleEventHandler} />
       <Route path='radialTree' component={RadialTree} />
