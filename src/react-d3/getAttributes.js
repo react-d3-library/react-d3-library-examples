@@ -21,13 +21,14 @@ module.exports = (attributesObject, node) => {
     if(key !== 'undefined') attributes[key] = eventHandlers[key]
   }
 
-  if(node['__react-d3-id']) {
-    attributes['__react-d3-id'] = node['__react-d3-id']
+  if(node['data-react-d3-id']) {
+    attributes['data-react-d3-id'] = node['data-react-d3-id']
   }
 
   if(node['__data__']) {
     attributes['__data__'] = node['__data__']
   }
+
 
   return attributes;
 }

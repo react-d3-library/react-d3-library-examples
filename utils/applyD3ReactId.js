@@ -10,7 +10,7 @@ function applyD3ReactId(children, counter) {
     parent.forEach( (child, i) => {
       if(child.children.length) length = child.children.length;
 
-      child['__react-d3-id'] = child.localName + '.' + counter + '.' + parentCount + '.' + count;
+      child['data-react-d3-id'] = child.localName + '.' + counter + '.' + parentCount + '.' + count;
       child['__data__']
         ? result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = child['__data__']
         : result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = null

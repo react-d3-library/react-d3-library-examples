@@ -1,4 +1,3 @@
-'use strict'
 import React, { Component } from 'react';
 // const getStyles = require('./getStyles');
 // const getAttributes = require('./getAttributes');
