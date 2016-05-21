@@ -1,10 +1,13 @@
+var d3 = require('d3');
+var div = document.createElement('div');
 
 var width = 960,
     height = 500;
 
-var svg = d3.select(root).append("svg")
+var svg = d3.select(div).append("svg")
     .attr("width", width)
     .attr("height", height)
+    .attr("class", "svgRD")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -20,7 +23,7 @@ gradient.append("stop")
     .attr("stop-color", "#ccf");
 
 gradient.append("stop")
-    .attr("offset", "50%")
+    .attr("offset", "60%")
     .attr("stop-color", "#1C425C");
 
 gradient.append("stop")
@@ -29,13 +32,14 @@ gradient.append("stop")
 
 // could use transparent gradient overlay to vary raindrop color
 svg.selectAll("path")
-    .data(d3.range(358))
+    .data(d3.range(2000))
   .enter().append("path")
+    .attr("class", "pathRD")
     .attr("fill", "url(#gradient)")
-    .attr("d", function() { return raindrop(10 + Math.random() * 200); })
+    .attr("d", function() { return raindrop(10 + Math.random() * 250); })
     .attr("transform", function(d) {
       return "rotate(" + d + ")"
-          + "translate(" + (height / 4 + Math.random() * height / 6) + ",0)"
+          + "translate(" + (height / 3.8 + Math.random() * height / 5.2) + ",0)"
           + "rotate(90)";
     });
 
@@ -49,4 +53,4 @@ function raindrop(size) {
       + "Z";
 }
 
-module.exports = svg;
+module.exports = div;

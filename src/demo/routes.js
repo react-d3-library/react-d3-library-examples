@@ -17,6 +17,7 @@ var AreaChart = require('./components/convertAreaChart');
 var LineChart = require('./components/convertLineChart');
 var ChainedTransitions = require('./components/convertChainedTransitions');
 var BinaryTree = require('./components/binaryTree');
+var RainDrops = require('./components/convertRainDrops');
 
 
 module.exports = (
@@ -38,6 +39,7 @@ module.exports = (
       <Route path='areaChart' component={AreaChart} />
       <Route path='lineChart' component={LineChart} />
       <Route path='chainedTransitions' component={ChainedTransitions} />
+      <Route path='rainDrops' component={RainDrops} />
     </Route>
   </Router>
 )

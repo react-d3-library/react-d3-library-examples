@@ -10,10 +10,10 @@ module.exports = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps) {
-
       let d3Data = d3DataToJSX(nextProps.data);
       this.setState({d3DOM: d3Data.mappedData, state: d3Data.state})
   },
+
 
   render: function() {
     return (

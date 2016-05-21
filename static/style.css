@@ -217,3 +217,12 @@ body {
   stroke-width: 1.5px;
 }
 
+.svgRD {
+  background: #fffacd;
+}
+
+.pathRD {
+  stroke: #fff;
+  stroke-opacity: .5;
+}
+
