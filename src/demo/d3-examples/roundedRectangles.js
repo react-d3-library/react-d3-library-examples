@@ -27,26 +27,6 @@ g.append("rect")
 g.datum(function(d) {
   return {center: mouse.slice(), angle: 0};
 });
-//console.log(svg[0][0].childNodes);
-svg.on('mousemove', function() {
-  var nodes = e.currentTarget.childNodes;
-  for (var key in nodes) {
-    if (!isNaN(key)) {
-    // console.log(nodes[key].children[0]);
-    //  nodes[key].children[0].setAttribute('transfrom', 'translate(' + e.pageX + ', ' + e.pageY + ')rotate(35)');
-      nodes[key].children.setAttribute('transfrom', 'translate(' + e.pageX + ', ' + e.pageY + ')rotate(35)');
-
-      // console.log(nodes[0].children[0].transform);
-      // console.log(e.pageX, e.pageY);
-      // console.log(this.onMouseMove);
-    }
-  }
-  //node.setAttribute('transfrom', 'translate(' + e.pageX + ', ' + e.pageY + ')rotate(35)')
-});
-
-//target all children of svg and change transform on them
-//keep track of timer in background
-//svg.on('mousemove', function() {e.currentTarget.setAttribute('transform', 'translate(' + e.pageX + ', ' + e.pageY + ')rotate(35)')});
 
 d3.timer(function() {
   count++;
