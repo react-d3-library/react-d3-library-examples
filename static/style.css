@@ -226,3 +226,21 @@ body {
   stroke-opacity: .5;
 }
 
+/* Particles Styles */
+.particlesRect {
+  fill: none;
+  pointer-events: all;
+}
+
+.particlesCircle {
+  fill: none;
+  stroke-width: 2.5px;
+}
+
+/* Stacked Bar Styles */
+.stackedBarAxis path,
+.stackedBarAxis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

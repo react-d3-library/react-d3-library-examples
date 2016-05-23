@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 module.exports = React.createClass({
 
   getInitialState: function() {
-    return {d3: ''}
+    return {d3: '', mouse: [480, 250]}
   },
 
   componentDidMount: function() {
@@ -14,7 +14,7 @@ module.exports = React.createClass({
   },
 
   componentDidUpdate: function() {
-    var mouse = [480, 250],
+    var mouse = this.state.mouse,
         count = 0;
 
     var svg = d3.select(ReactDOM.findDOMNode(this));
@@ -23,6 +23,10 @@ module.exports = React.createClass({
 
     g.datum(function(d) {
       return {center: mouse.slice(), angle: 0};
+    });
+
+    svg.on("mousemove", function() {
+      mouse = d3.mouse(this);
     });
 
     d3.timer(function() {  
