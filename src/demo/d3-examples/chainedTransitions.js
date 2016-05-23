@@ -6,7 +6,7 @@ var margin = {top: 40, right: 40, bottom: 40, left: 40},
     height = 1000 - margin.top - margin.bottom;
 
 var y = d3.scale.ordinal()
-    .domain(d3.range(1500))
+    .domain(d3.range(300))
     .rangePoints([0, height]);
 
 var z = d3.scale.linear()

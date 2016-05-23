@@ -20,7 +20,7 @@ module.exports = React.createClass({
         height = 1000 - margin.top - margin.bottom;
 
     var y = d3.scale.ordinal()
-      .domain(d3.range(1500))
+      .domain(d3.range(300))
       .rangePoints([0, height]);
 
     var selection = ReactDom.findDOMNode(this);
@@ -30,8 +30,8 @@ module.exports = React.createClass({
     svg.selectAll("circle")
       .data(y.domain())
       .transition()
-      .duration(1000)
-      .delay(function(d) { return d * 50; })
+      .duration(650)
+      .delay(function(d) { return d * 70; })
       .each(slide);
 
 
