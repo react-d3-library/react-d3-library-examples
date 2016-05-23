@@ -10,18 +10,17 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function() {
-    // d3.timer(this.update);
     this.setState({d3: node});
   },
 
-  update: function(e) {
-    console.log([e.currentTarget])
+  handler: function(event) {
+    console.log(event);
   },
 
   render: function() {
     return (
       <div>
-        <button onClick={this.update}>ClickM</button>
+        <button onClick={this.handler}> Test </button>
         <D3StateContainer data={this.state.d3} />
       </div>
     )

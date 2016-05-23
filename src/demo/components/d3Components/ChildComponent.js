@@ -10,7 +10,7 @@ module.exports = React.createClass({
 
   componentWillReceiveProps: function(nextProps) {
       var props = nextProps.data;
-      var reactComponents = createReactComponents(props.d3DOM, props.state)
+      var reactComponents = createReactComponents(props.d3DOM, props.state, nextProps.getState)
       this.setState({reactComponents: reactComponents})
   },
 
