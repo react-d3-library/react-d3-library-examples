@@ -11,7 +11,7 @@ module.exports = (obj, stateData, getState) => {
   }
 
   for(var key in obj.props) {
-    if(key.indexOf('on') > -1) {
+    if(key.indexOf('onClick') > -1) {
       obj.props[key] = getState(obj.props[key]);
     }
   }
