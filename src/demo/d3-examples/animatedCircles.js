@@ -119,11 +119,11 @@ var color = d3.scale.linear()
   .domain([0, 100])
   .range(["#F66A96", "#3E6E9C"]);
 
-var data = d3.range(100).map(function(d) {
+var data = d3.range(50).map(function(d) {
   return {
     id: d,
-    size: 1 + Math.floor(Math.random() * 5),
-    r: Math.random() * 10,
+    size: 1 + Math.floor(Math.random() * 50),
+    r: Math.random() * 50,
     color: Math.floor(Math.random() * 100),
     f: (Math.random() > 0.5 ? -1 : 1) * (Math.random() * 10000 + 1000)
   };
@@ -143,16 +143,11 @@ node.enter().append("circle")
   .attr("class", "node")
   .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
   .attr("r", function(d) { return d.size; })
-  .attr("fill", function(d) { return color(d.color); });
-
-// function update(t) {
-//   node.attr("transform", function(d) {
-//     var alpha = TAU / d.f * (t % d.f);
-//     return "translate(" + (d.x + Math.cos(alpha) * d.r) + "," + (d.y + Math.sin(alpha) * d.r) + ")";
-//   });
-// }
-
-// d3.timer(update);
+  .attr("fill", function(d) { return color(d.color); })
+  .on("click", function(d) { d3.select(this).attr(
+    {"r" : d.r + 5,
+    color: 23});
+  })
 
 d3.select(self.frameElement).style("height", height + "px");
 
