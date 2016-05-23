@@ -1,5 +1,5 @@
 import React from 'react';
-import node from './../d3-examples/bubbleChart';
+import node from './../d3-examples/rainDrops';
 import D3StateContainer from './d3Components/Component';
 
 module.exports = React.createClass({
@@ -13,7 +13,6 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    console.log(node)
     return (
       <div>
         <D3StateContainer data={this.state.d3} />

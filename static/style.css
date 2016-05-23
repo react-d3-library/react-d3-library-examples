@@ -210,3 +210,19 @@ body {
   stroke: steelblue;
   stroke-width: 1.5px;
 }
+
+.circleT {
+  fill: #000;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.svgRD {
+  background: #fffacd;
+}
+
+.pathRD {
+  stroke: #fff;
+  stroke-opacity: .5;
+}
+
