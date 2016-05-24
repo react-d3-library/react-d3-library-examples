@@ -1,30 +1,33 @@
-import React, { Component } from 'react';
-import createNode from './../d3-examples/binarytree';
-import D3StateContainer from './d3Components/Component';
 
+// import React, { Component } from 'react';
+// import createNode from './../d3-examples/binarytree';
+// import rd3 from 'react-d3-library';
 
-module.exports = React.createClass({
+// const RD3Component = rd3.Component
 
-  getInitialState: function() {
-    return {d3: ''}
-  },
+// module.exports = React.createClass({
 
-  componentDidMount: function() {
-    var node = createNode();
-    this.setState({d3: node});
-  },
+//   getInitialState: function() {
+//     return {d3: ''}
+//   },
 
-  regenerate: function() {
-    var node = createNode();
-    this.setState({d3: node});
-  },
+//   componentDidMount: function() {
+//     var node = createNode();
+//     this.setState({d3: node});
+//   },
 
-  render: function() {
-    return (
-      <div>
-        <D3StateContainer data={this.state.d3} />
-        <button onClick={this.regenerate}>Regenerate</button>
-      </div>
-    )
-  }
-});
+//   regenerate: function() {
+//     var node = createNode();
+//     this.setState({d3: node});
+//   },
+
+//   render: function() {
+//     return (
+//       <div>
+//         <RD3Component data={this.state.d3} />
+//         <button onClick={this.regenerate}>Regenerate</button>
+//       </div>
+//     )
+//   }
+// });
+
