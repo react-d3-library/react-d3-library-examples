@@ -37,7 +37,6 @@ module.exports = React.createClass({
 
     function slide() {
       counter++
-      console.log(counter)
       var circle = d3.select(this);
       (function repeat() {
         circle = circle.transition()

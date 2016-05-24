@@ -18,6 +18,8 @@ var LineChart = require('./components/convertLineChart');
 var ChainedTransitions = require('./components/convertChainedTransitions');
 var BinaryTree = require('./components/binaryTree');
 var RainDrops = require('./components/convertRainDrops');
+var StackedToBars = require('./components/convertStackedToBars');
+var GrowTree = require('./components/convertGrowTree');
 
 
 module.exports = (
@@ -40,6 +42,8 @@ module.exports = (
       <Route path='lineChart' component={LineChart} />
       <Route path='chainedTransitions' component={ChainedTransitions} />
       <Route path='rainDrops' component={RainDrops} />
+      <Route path='stackedToBars' component={StackedToBars} />
+      <Route path='growTree' component={GrowTree} />
     </Route>
   </Router>
 )
