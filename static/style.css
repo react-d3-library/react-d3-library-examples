@@ -242,7 +242,37 @@ body {
 /* Stacked Bar Styles */
 .stackedBarAxis path,
 .stackedBarAxis line {
+
+/* stacked to bars */
+
+  .STB {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 960px;
+}
+
+text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
+}
+
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.branch {
+  stroke : black;
+  stroke-opacity : 0.65;
+  stroke-width : 3;
+  fill : none;
+
 }

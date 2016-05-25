@@ -1,8 +1,7 @@
 import React from 'react';
 import node from './../d3-examples/mergeSort';
-const rd3 = require('react-d3-library');
+import D3StateContainer from './d3Components/Component';
 
-const RD3Component = rd3.Component;
 
 module.exports = React.createClass({
 
@@ -17,7 +16,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        <RD3Component data={this.state.d3} />
+        <D3StateContainer data={this.state.d3} />
       </div>
     )
   }

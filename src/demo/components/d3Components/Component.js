@@ -32,7 +32,3 @@ module.exports = React.createClass({
     )
   }
 });
-
-
-
-

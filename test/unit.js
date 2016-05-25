@@ -1,6 +1,10 @@
-const toCamelCase = require('./../utils/toCamelCase');
+const toCamelCase = require('./../lib/utils/toCamelCase');
 const expect = require('expect');
-
+const React = require('react');
+// const D3StateContainer = require('./../lib/d3Components/Component');
+const enzyme = require('enzyme');
+const shallow = enzyme.shallow;
+// const Component = require('./convertBubbleChart');
 describe('utils unit tests', () => {
 
 	//test function that will convert spinal-case d3 attribute names to camelCase
@@ -20,6 +24,14 @@ describe('utils unit tests', () => {
 			expect(toCamelCase(alreadyCamel)).toEqual('alreadyCamel');
 		})
 
+	})
+
+	describe('<Component />', () => {
+		
+	  	it('renders children when passed in', () => {
+    		const wrapper = shallow(<Component><div></div><Component>);
+    		expect(wrapper.contains(<div></div>)).to.equal(true);
+  		});
 	})
 
 })
