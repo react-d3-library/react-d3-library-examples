@@ -16,8 +16,10 @@ var ScatterPlot = require('./components/convertScatterPlot');
 var AreaChart = require('./components/convertAreaChart');
 var LineChart = require('./components/convertLineChart');
 var ChainedTransitions = require('./components/convertChainedTransitions');
-var BinaryTree = require('./components/binaryTree');
 var RainDrops = require('./components/convertRainDrops');
+var Particles = require('./components/convertParticles');
+var Streamgraph = require('./components/convertStreamgraph');
+var DNAHelix = require('./components/convertDNAHelix');
 var StackedToBars = require('./components/convertStackedToBars');
 var GrowTree = require('./components/convertGrowTree');
 
@@ -25,7 +27,6 @@ var GrowTree = require('./components/convertGrowTree');
 module.exports = (
   <Router history={browserHistory} >
     <Route path='/' component={App}>
-      <Route path='binaryTree' component={BinaryTree} />
       <Route path='bubbleChart' component={BubbleChart} />
       <Route path='circleEventHandler' component={CircleEventHandler} />
       <Route path='radialTree' component={RadialTree} />
@@ -42,6 +43,9 @@ module.exports = (
       <Route path='lineChart' component={LineChart} />
       <Route path='chainedTransitions' component={ChainedTransitions} />
       <Route path='rainDrops' component={RainDrops} />
+      <Route path='particles' component={Particles} />
+      <Route path='streamgraph' component={Streamgraph} />
+      <Route path='dnaHelix' component={DNAHelix} />
       <Route path='stackedToBars' component={StackedToBars} />
       <Route path='growTree' component={GrowTree} />
     </Route>
