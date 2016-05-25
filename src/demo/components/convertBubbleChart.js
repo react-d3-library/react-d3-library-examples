@@ -13,7 +13,6 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    console.log(node)
     return (
       <div>
         <D3StateContainer data={this.state.d3} />

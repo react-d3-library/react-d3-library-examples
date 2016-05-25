@@ -8,7 +8,6 @@ module.exports = React.createClass({
         <nav className="navbar">
         	<li><Link to="/">Home</Link></li>
           <li><Link to="/bubbleChart">Bubble Chart</Link></li>
-          <li><Link to="/binaryTree">Binary Tree</Link></li>
           <li><Link to="/circleEventHandler">Circle Event</Link></li>
           <li><Link to="/radialTree">Radial Tree</Link></li>
           <li><Link to="/colorMesh">colorMesh</Link></li>
@@ -22,10 +21,11 @@ module.exports = React.createClass({
           <li><Link to="/scatterPlot">Scatter Plot</Link></li>
           <li><Link to="/areaChart">Area Chart</Link></li>
           <li><Link to="/lineChart">Line Chart</Link></li>
-          <li><Link to="/binarytree">Binary Tree</Link></li>
           <li><Link to="/chainedTransitions">Chained Transitions</Link></li>
           <li><Link to="/rainDrops">Rain Drops</Link></li>
           <li><Link to="/particles">Particles</Link></li>
+          <li><Link to="/streamgraph">Streamgraph</Link></li>
+          <li><Link to="/dnaHelix">DNA Helix</Link></li>
         </nav>
       </div>
     )

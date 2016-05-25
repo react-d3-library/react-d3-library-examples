@@ -25,7 +25,7 @@ module.exports = React.createClass({
 
     function particle() {
       var m = d3.mouse(this);
-
+      console.log('working');
       svg.insert("circle", "rect")
           .attr("cx", m[0])
           .attr("cy", m[1])

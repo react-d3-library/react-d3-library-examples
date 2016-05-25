@@ -13,7 +13,14 @@ module.exports = React.createClass({
     this.setState({d3: node});
   },
 
+  shouldComponentUpdate: function() {
+    return !this.__isMounted;
+  },
+
   componentDidUpdate: function() {
+    // Set isMounted for component that is holding a d3 timer
+    this.__isMounted = false;
+
     var mouse = this.state.mouse,
         count = 0;
 
@@ -29,6 +36,14 @@ module.exports = React.createClass({
       mouse = d3.mouse(this);
     });
 
+    // Need a reference to this execution context
+    var that = this;
+
+    this.__isMounted = true;
+
+    // When using a d3 timer, need to reference .__isMounted
+    // Change boolean when unmounting component
+    // Return true to stop timer
     d3.timer(function() {  
       count++;
       g.attr("transform", function(d, i) {
@@ -37,7 +52,17 @@ module.exports = React.createClass({
         d.angle += Math.sin((count + i) / 10) * 7;
         return "translate(" + d.center + ")rotate(" + d.angle + ")";
       });
+      if (that.__isMounted === false) return true;
     });
+  },
+
+  componentWillUpdate: function() {
+    this.__isMounted = false;
+  },
+
+  // When changing views, this component will unmount and stop timer
+  componentWillUnmount: function() {
+    this.__isMounted = false;
   },
 
   render: function() {

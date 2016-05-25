@@ -28,8 +28,4 @@ g.datum(function(d) {
   return {center: mouse.slice(), angle: 0};
 });
 
-// svg.on("mousemove", function() {
-//   mouse = [e.target.pageX, e.target.pageY];
-// });
-
 module.exports = div;
