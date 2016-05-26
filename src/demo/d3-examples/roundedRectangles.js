@@ -22,7 +22,17 @@ g.append("rect")
     .attr("width", 25)
     .attr("height", 25)
     .attr("transform", function(d, i) { return "scale(" + (1 - d / 25) * 20 + ")"; })
-    .style("fill", d3.scale.category20c());
+    .style("fill", d3.scaleCategory20c());
+
+svg.on("click", function() { 
+      var g = d3.selectAll('rect');
+      g.style("fill", d3.scaleCategory20b());
+      console.log('hello')
+    })
+svg.on("mouseenter", function() { 
+        console.log('test')
+      console.log(d3.mouse(this))
+    })
 
 g.datum(function(d) {
   return {center: mouse.slice(), angle: 0};

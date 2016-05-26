@@ -29,6 +29,7 @@ path, line {
   margin: 0 auto;
   position: relative;
   text-align: center;
+
 }
 
 /* These are styles for radialTree */
@@ -240,12 +241,12 @@ body {
 }
 
 /* Stacked Bar Styles */
-.stackedBarAxis path,
-.stackedBarAxis line {
+/*.stackedBarAxis path,
+.stackedBarAxis line {*/
 
 /* stacked to bars */
 
-  .STB {
+.STB {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: auto;
   position: relative;
@@ -279,20 +280,41 @@ form {
 
 /*Voronoia*/
 
-circle {
+.vorCircle {
   stroke: #EFEDF5;
   fill: #EFEDF5;
   pointer-events: none;
 }
-line {
+.vorLine {
   pointer-events: none;
   stroke: #EFEDF5;
   stroke-width: 2px;
   opacity: .05;
 }
-path{
+.vorPath {
   stroke: #EFEDF5;
   stroke-width: 4px;
 }
 
+.navbar li {
+  font-size: 16px;
+  list-style-type: none;
+  float: left !important;
+  display: relative;
+  color: red;
+  margin: 7px;
+}
 
+/*force layout*/
+
+.nodeFL {
+  cursor: pointer;
+  stroke: #3182bd;
+  stroke-width: 1.5px;
+}
+
+.linkFL {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-width: 1.5px;
+}

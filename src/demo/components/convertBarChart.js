@@ -1,6 +1,6 @@
 import React from 'react';
 import node from './../d3-examples/barChart';
-import BarChart from './d3Components/BarChart';
+// import BarChart from './d3Components/BarChart';
 
 module.exports = React.createClass({
 

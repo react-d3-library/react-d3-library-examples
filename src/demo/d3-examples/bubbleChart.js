@@ -4,7 +4,7 @@ var div = document.createElement('div');
 
 var diameter = 960,
     format = d3.format(",d"),
-    color = d3.scale.category20c();
+    color = d3.scaleCategory20c();
 
 var bubble = d3.layout.pack()
     .sort(null)

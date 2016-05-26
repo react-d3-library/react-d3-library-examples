@@ -1,6 +1,6 @@
 import React from 'react';
 import node from './../d3-examples/pieChart';
-import PieChart from './d3Components/PieChart'
+// import PieChart from './d3Components/PieChart'
 
 module.exports = React.createClass({
 

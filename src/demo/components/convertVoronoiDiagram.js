@@ -106,6 +106,8 @@ module.exports = React.createClass({
 	          })
 	        )
 	        .style("fill", function(d, i) { return color(0) })
+	        .attr('class', 'vorPath');
+
 	    path.attr("d", function(d) { return "M" + d.join("L") + "Z"; })
 	        .transition().duration(150).style("fill", function(d, i) { return color(d3.geom.polygon(d).area()) })
 	    path.exit().remove();
@@ -114,7 +116,8 @@ module.exports = React.createClass({
 	          .attr("r", 0)
 	          .transition().duration(1000).attr("r", 5);
 	    circle.attr("cx", function(d) { return d.x; })
-	          .attr("cy", function(d) { return d.y; });
+	          .attr("cy", function(d) { return d.y; })
+	          .attr('class', 'vorCircle');
 	    circle.exit().transition().attr("r", 0).remove();
 	    link = link.data(d3_geom_voronoi.links(vertices))
 	    link.enter().append("line")
@@ -122,6 +125,7 @@ module.exports = React.createClass({
 	        .attr("y1", function(d) { return d.source.y; })
 	        .attr("x2", function(d) { return d.target.x; })
 	        .attr("y2", function(d) { return d.target.y; })
+	        .attr('class', 'vorLink');
 	    link.exit().remove()
 	    if(!simulate) force.stop()
 	}
