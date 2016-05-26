@@ -276,3 +276,23 @@ form {
   fill : none;
 
 }
+
+/*Voronoia*/
+
+circle {
+  stroke: #EFEDF5;
+  fill: #EFEDF5;
+  pointer-events: none;
+}
+line {
+  pointer-events: none;
+  stroke: #EFEDF5;
+  stroke-width: 2px;
+  opacity: .05;
+}
+path{
+  stroke: #EFEDF5;
+  stroke-width: 4px;
+}
+
+

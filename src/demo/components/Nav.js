@@ -28,6 +28,7 @@ module.exports = React.createClass({
           <li><Link to="/dnaHelix">DNA Helix</Link></li>
           <li><Link to="/stackedToBars">Stacked To Grouped Bars</Link></li>
           <li><Link to="/growTree">Grow Tree</Link></li>
+          <li><Link to="/voronoiDiagram">Voronoi Diagram</Link></li>
         </nav>
       </div>
     )
