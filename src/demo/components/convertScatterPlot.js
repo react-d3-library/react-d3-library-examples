@@ -1,6 +1,6 @@
 import React from 'react';
 import node from './../d3-examples/scatterPlot';
-import ScatterPlot from './d3Components/ScatterPlot';
+// import ScatterPlot from './d3Components/ScatterPlot';
 
 module.exports = React.createClass({
 

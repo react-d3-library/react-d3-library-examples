@@ -1,6 +1,6 @@
 import React from 'react';
 var createReactComponents = require('./../../../react-d3/createReactComponents');
-import node from './../../d3-examples/chainedTransitions';
+
 
 module.exports = React.createClass({
 

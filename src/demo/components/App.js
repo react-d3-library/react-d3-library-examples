@@ -6,8 +6,9 @@ module.exports = React.createClass ({
 	render() {
 		return (
 			<div>
-				<Nav />
 				<h1>React-d3-Library</h1>
+				<Nav />
+				<br/>
 				{this.props.children}
 			</div>
 		)

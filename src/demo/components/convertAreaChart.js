@@ -1,6 +1,6 @@
 import React from 'react';
 import node from './../d3-examples/areaChart';
-import AreaChart from './d3Components/AreaChart';
+// import AreaChart from './d3Components/AreaChart';
 
 module.exports = React.createClass({
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import node from './../d3-examples/chainedTransitions';
+// import node from './../d3-examples/chainedTransitions';
 import D3StateContainer from './d3Components/Component';
 import ReactDom from 'react-dom';
 
@@ -27,7 +27,7 @@ module.exports = React.createClass({
 
     var svg = d3.select(selection);
 
-    svg.selectAll("circle")
+    var node = svg.selectAll("circle")
       .data(y.domain())
       .transition()
       .duration(650)
@@ -46,6 +46,7 @@ module.exports = React.createClass({
             .each("end", repeat);
       })();
     }
+    console.log('node', node)
   },
 
   render: function() {
