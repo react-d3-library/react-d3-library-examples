@@ -20,8 +20,28 @@ module.exports = React.createClass({
     var state = this.props.data.state;
     for(var i = 0; i < reactD3Elements.length; i++) {
       var rd3Id = reactD3Elements[i].getAttribute('data-react-d3-id');
-      reactD3Elements[i]['__data__'] = state[rd3Id]
+
+      if(!state[rd3Id]) {
+        continue;
+      }
+
+      if(state[rd3Id]['__data__'] !== null) {
+        reactD3Elements[i]['__data__'] = state[rd3Id]['__data__']
+      }
+
+      if(state[rd3Id]['__on']) {
+        reactD3Elements[i]['__on'] = state[rd3Id]['__on']
+      }
+
+      if(state[rd3Id]['__zoom']) {
+        reactD3Elements[i]['__zoom'] = state[rd3Id]['__zoom']
+      }
+
+      if(state[rd3Id]['__transition__']) {
+        reactD3Elements[i]['__transition__'] = state[rd3Id]['__transition__']
+      }
     }
+
   },
 
   render: function() {

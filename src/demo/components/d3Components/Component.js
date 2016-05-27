@@ -25,6 +25,7 @@ module.exports = React.createClass({
 
 
   render: function() {
+    console.log(this.state.state)
     return (
       <div>
         <ChildComponent data={this.state} getState={this.getState} />

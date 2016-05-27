@@ -24,12 +24,11 @@ g.append("rect")
     .attr("transform", function(d, i) { return "scale(" + (1 - d / 25) * 20 + ")"; })
     .style("fill", d3.scaleCategory20c());
 
-svg.on("click", function() { 
+g.on("click", function() {
       var g = d3.selectAll('rect');
       g.style("fill", d3.scaleCategory20b());
-      console.log('hello')
     })
-svg.on("mouseenter", function() { 
+svg.on("mouseenter", function() {
         console.log('test')
       console.log(d3.mouse(this))
     })
