@@ -37,8 +37,6 @@ module.exports = React.createClass({
       mouse = d3.mouse(this);
     });
 
-
-
     // Need a reference to this execution context
     var that = this;
 
@@ -47,7 +45,7 @@ module.exports = React.createClass({
     // When using a d3 timer, need to reference .__isMounted
     // Change boolean when unmounting component
     // Return true to stop timer
-    var timer = d3.timer(function() {  
+    var timer = d3.timer(function() {
       count++;
       g.attr("transform", function(d, i) {
         d.center[0] += (mouse[0] - d.center[0]) / (i + 5);
@@ -62,7 +60,6 @@ module.exports = React.createClass({
     setTimeout(function(){
       svg.dispatch("mouseenter");
     }, 3000)
-    console.log(svg)
   },
 
   componentWillUpdate: function() {
@@ -75,8 +72,10 @@ module.exports = React.createClass({
   },
 
   render: function() {
+
     return (
       <div>
+        {component || ''}
         <D3StateContainer data={this.state.d3} />
       </div>
     )
