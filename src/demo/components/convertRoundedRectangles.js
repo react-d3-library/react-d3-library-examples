@@ -75,7 +75,6 @@ module.exports = React.createClass({
 
     return (
       <div>
-        {component || ''}
         <D3StateContainer data={this.state.d3} />
       </div>
     )
