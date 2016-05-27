@@ -43,10 +43,8 @@ module.exports = (nodes) => {
 
     // Build the props object to be used in react createElement and convert into react friendly syntax
     output.props = getAttributes(obj.attributes, obj);
-
     // If styles exits convert the CSSStyleDeclaration into react friendly syntax-
     if(output.props.style) output.props.style = getStyles(output.props.style);
-
     // Key represents (type of DOM element) + (layer deep in the tree) + (index of each sibling element)
     // output.props.key = output.tag + '.' + counter + '.' + i;
 

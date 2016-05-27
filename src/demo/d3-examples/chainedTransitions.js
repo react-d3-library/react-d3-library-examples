@@ -5,11 +5,11 @@ var margin = {top: 40, right: 40, bottom: 40, left: 40},
     width = 960 - margin.left - margin.right,
     height = 1000 - margin.top - margin.bottom;
 
-var y = d3.scale.ordinal()
+var y = d3.scaleOrdinal()
     .domain(d3.range(300))
-    .rangePoints([0, height]);
+    .range([0, height]);
 
-var z = d3.scale.linear()
+var z = d3.scaleLinear()
     .domain([10, 0])
     .range(["hsl(62,100%,90%)", "hsl(228,30%,20%)"])
     .interpolate(d3.interpolateHcl);
