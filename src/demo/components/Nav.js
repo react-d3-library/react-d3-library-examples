@@ -7,7 +7,9 @@ module.exports = React.createClass({
       <div>
         <nav className="navbar">
         <li><Link to="/roundedRectangles">Rounded Rectangles</Link></li>
-              <li><Link to="/rainDrops">Rain Drops</Link></li>
+        <li><Link to="/rainDrops">Rain Drops</Link></li>
+        <li><Link to="/chainedTransitions">Chained Transitions</Link></li>
+        <li><Link to="/panAndZoom">Pan and Zoom</Link></li>
         </nav>
       </div>
     )
@@ -29,7 +31,7 @@ module.exports = React.createClass({
           // <li><Link to="/scatterPlot">Scatter Plot</Link></li>
           // <li><Link to="/areaChart">Area Chart</Link></li>
           // <li><Link to="/lineChart">Line Chart</Link></li>
-          // <li><Link to="/chainedTransitions">Chained Transitions</Link></li>
+
           // <li><Link to="/rainDrops">Rain Drops</Link></li>
           // <li><Link to="/particles">Particles</Link></li>
           // <li><Link to="/streamgraph">Streamgraph</Link></li>

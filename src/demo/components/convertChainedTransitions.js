@@ -1,7 +1,8 @@
 import React from 'react';
-// import node from './../d3-examples/chainedTransitions';
+import node from './../d3-examples/chainedTransitions';
 import D3StateContainer from './d3Components/Component';
 import ReactDom from 'react-dom';
+import d3 from 'd3';
 
 module.exports = React.createClass({
 
@@ -19,9 +20,9 @@ module.exports = React.createClass({
         width = 960 - margin.left - margin.right,
         height = 1000 - margin.top - margin.bottom;
 
-    var y = d3.scale.ordinal()
+    var y = d3.scaleOrdinal()
       .domain(d3.range(300))
-      .rangePoints([0, height]);
+      .range([0, height]);
 
     var selection = ReactDom.findDOMNode(this);
 
@@ -43,10 +44,9 @@ module.exports = React.createClass({
             .attr("cx", width)
             .transition()
             .attr("cx", 0)
-            .each("end", repeat);
+            .each(setTimeout(repeat, 1000));
       })();
     }
-    console.log('node', node)
   },
 
   render: function() {

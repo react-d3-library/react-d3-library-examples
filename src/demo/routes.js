@@ -15,7 +15,7 @@ var RoundedRectangles = require('./components/convertRoundedRectangles');
 // var ScatterPlot = require('./components/convertScatterPlot');
 // var AreaChart = require('./components/convertAreaChart');
 // var LineChart = require('./components/convertLineChart');
-// var ChainedTransitions = require('./components/convertChainedTransitions');
+var ChainedTransitions = require('./components/convertChainedTransitions');
 var RainDrops = require('./components/convertRainDrops');
 // var Particles = require('./components/convertParticles');
 // var Streamgraph = require('./components/convertStreamgraph');
@@ -24,13 +24,16 @@ var RainDrops = require('./components/convertRainDrops');
 // var GrowTree = require('./components/convertGrowTree');
 // var VoronoiDiagram = require('./components/convertVoronoiDiagram');
 // var ForceLayout = require('./components/convertForceLayout');
+var PanAndZoom = require('./components/convertPanAndZoom');
 
 
 module.exports = (
   <Router history={browserHistory} >
     <Route path='/' component={App}>
-       <Route path='roundedRectangles' component={RoundedRectangles} />
-              <Route path='rainDrops' component={RainDrops} />
+      <Route path='roundedRectangles' component={RoundedRectangles} />
+      <Route path='rainDrops' component={RainDrops} />
+      <Route path='chainedTransitions' component={ChainedTransitions} />
+      <Route path='panAndZoom' component={PanAndZoom} />
     </Route>
   </Router>
 )
@@ -52,7 +55,7 @@ module.exports = (
       // <Route path='scatterPlot' component={ScatterPlot} />
       // <Route path='areaChart' component={AreaChart} />
       // <Route path='lineChart' component={LineChart} />
-      // <Route path='chainedTransitions' component={ChainedTransitions} />
+
       // <Route path='rainDrops' component={RainDrops} />
       // <Route path='particles' component={Particles} />
       // <Route path='streamgraph' component={Streamgraph} />

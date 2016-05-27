@@ -2,7 +2,7 @@ module.exports = spinalCaseValue => {
 	'use strict';
 	let strArray = spinalCaseValue.split('');
 	let shouldCapitalize = false;
-	return strArray.reduce((acc, cur) => {
+	var output = strArray.reduce((acc, cur) => {
 		if(cur === '-') {
 			shouldCapitalize = true;
 			return acc;
@@ -13,8 +13,8 @@ module.exports = spinalCaseValue => {
 			return acc.concat(cur);
 		}
 	})
+	return output;
 }
-
 
 
 
