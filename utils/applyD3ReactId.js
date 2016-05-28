@@ -11,9 +11,25 @@ function applyD3ReactId(children, counter) {
       if(child.children.length) length = child.children.length;
 
       child['data-react-d3-id'] = child.localName + '.' + counter + '.' + parentCount + '.' + count;
+
+      result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = {};
+
       child['__data__']
-        ? result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = child['__data__']
-        : result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = null
+        ? result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__data__'] = child['__data__']
+        : result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__data__'] = null
+
+      if(child['__on']) {
+        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__on'] = child['__on']
+      }
+
+      if(child['__zoom']) {
+        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__zoom'] = child['__zoom']
+      }
+
+      if(child['__transition__']) {
+        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__transition__'] = child['__transition__']
+      }
+
 
       if(count === length) count = 0, parentCount++;
 
