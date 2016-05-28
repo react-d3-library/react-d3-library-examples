@@ -29,7 +29,11 @@ module.exports = (attributesObject, node) => {
     attributes['__data__'] = node['__data__'];
   }
 
-   if(node['__transition__']) {
+  if(node['__on']) {
+    attributes['__on'] = node['__on']
+  }
+
+  if(node['__transition__']) {
     attributes['data-transition'] = node['__transition__'];
   }
 
