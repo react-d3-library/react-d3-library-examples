@@ -27,6 +27,8 @@ svg.append("rect")
         .on("zoom", zoomed));
 
 function zoomed() {
+  var body = d3.select('body');
+  var circle = d3.selectAll('circle');
   var transform = d3.event.transform;
   circle.attr("transform", function(d) {
     return "translate(" + transform.applyX(d[0]) + "," + transform.applyY(d[1]) + ")";
@@ -43,6 +45,6 @@ function phyllotaxis(radius) {
     ];
   };
 }
-
 console.log(node);
+
 module.exports = node

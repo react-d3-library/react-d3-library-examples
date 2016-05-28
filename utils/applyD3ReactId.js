@@ -16,7 +16,7 @@ function applyD3ReactId(children, counter) {
 
       child['__data__']
         ? result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__data__'] = child['__data__']
-        : result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = null
+        : result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__data__'] = null
 
       if(child['__on']) {
         result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__on'] = child['__on']
