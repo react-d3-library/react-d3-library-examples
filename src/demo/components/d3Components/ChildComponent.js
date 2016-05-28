@@ -26,11 +26,17 @@ module.exports = React.createClass({
       }
 
       if(state[rd3Id]['__data__'] !== null) {
+         console.log('__data__', state[rd3Id]['__data__'])
         reactD3Elements[i]['__data__'] = state[rd3Id]['__data__']
       }
 
       if(state[rd3Id]['__on']) {
+        console.log('__on', state[rd3Id]['__on'])
         reactD3Elements[i]['__on'] = state[rd3Id]['__on']
+        for(var j = 0; j < state[rd3Id]['__on'].length; j++) {
+          reactD3Elements[i].addEventListener(state[rd3Id]['__on'][j]["type"], state[rd3Id]['__on'][j]["listener"], state[rd3Id]['__on'][j]["capture"])
+        } 
+          
       }
 
       if(state[rd3Id]['__zoom']) {

@@ -5,14 +5,15 @@ var div = document.createElement('div');
 var mouse = [480, 250],
     count = 0;
 
-var svg = d3.select(div).append("svg")
+var data = d3.select(div)
+ var svg = data.selectAll('svg')    
     .attr("width", 960)
     .attr("height", 500);
 
 var g = svg.selectAll("g")
     .data(d3.range(25))
   .enter().append("g")
-    .attr("transform", "translate(" + mouse + ")")
+    .attr("transform", "translate(" + mouse + ")");
 
 g.append("rect")
     .attr("rx", 6)
@@ -24,17 +25,23 @@ g.append("rect")
     .attr("transform", function(d, i) { return "scale(" + (1 - d / 25) * 20 + ")"; })
     .style("fill", d3.scaleCategory20c());
 
-g.on("click", function() {
-      var g = d3.selectAll('rect');
-      g.style("fill", d3.scaleCategory20b());
-    })
-svg.on("mouseenter", function() {
-        console.log('test')
-      console.log(d3.mouse(this))
-    })
-
 g.datum(function(d) {
   return {center: mouse.slice(), angle: 0};
+});
+
+svg.on("mousemove", function() {
+   console.log('hereeee') 
+   mouse = d3.mouse(this);
+});
+
+d3.timer(function() {
+  count++;
+  g.attr("transform", function(d, i) {
+    d.center[0] += (mouse[0] - d.center[0]) / (i + 5);
+    d.center[1] += (mouse[1] - d.center[1]) / (i + 5);
+    d.angle += Math.sin((count + i) / 10) * 7;
+    return "translate(" + d.center + ")rotate(" + d.angle + ")";
+  });
 });
 
 module.exports = div;
