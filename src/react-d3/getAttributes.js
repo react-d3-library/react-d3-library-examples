@@ -15,11 +15,11 @@ module.exports = (attributesObject, node) => {
     }
   }
 
-  let eventHandlers = eventHandler(node);
+  // let eventHandlers = eventHandler(node);
 
-  for(let key in eventHandlers) {
-    if(key !== 'undefined') attributes[key] = eventHandlers[key]
-  }
+  // for(let key in eventHandlers) {
+  //   if(key !== 'undefined') attributes[key] = eventHandlers[key]
+  // }
 
   if(node['data-react-d3-id']) {
     attributes['data-react-d3-id'] = node['data-react-d3-id']
@@ -29,9 +29,19 @@ module.exports = (attributesObject, node) => {
     attributes['__data__'] = node['__data__'];
   }
 
-   if(node['__transition__']) {
+  if(node['__on']) {
+    attributes['__on'] = node['__on']
+  }
+
+  if(node['__transition__']) {
     attributes['data-transition'] = node['__transition__'];
   }
+
+  if(node['__onmousemove']) {
+    attributes['__onmousemove'] = node['__onmousemove'];
+  }
+
+  
 
 
   return attributes;

@@ -22,6 +22,7 @@ var Streamgraph = require('./components/convertStreamgraph');
 var DNAHelix = require('./components/convertDNAHelix');
 var StackedToBars = require('./components/convertStackedToBars');
 var GrowTree = require('./components/convertGrowTree');
+var VoronoiDiagram = require('./components/convertVoronoiDiagram');
 
 
 module.exports = (
@@ -48,7 +49,10 @@ module.exports = (
       <Route path='dnaHelix' component={DNAHelix} />
       <Route path='stackedToBars' component={StackedToBars} />
       <Route path='growTree' component={GrowTree} />
+      <Route path='voronoiDiagram' component={VoronoiDiagram} />
     </Route>
   </Router>
 )
 
+
+   // <Route path='binaryTree' component={BinaryTree} />

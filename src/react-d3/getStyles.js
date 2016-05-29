@@ -1,3 +1,5 @@
+const toCamelCase = require('./../../utils/toCamelCase');
+
 module.exports =  styleObject => {
 
 	var styles = {};
@@ -6,15 +8,10 @@ module.exports =  styleObject => {
 		let styleArray = styleObject.split(';');
 		styleArray.pop();
 		styleArray.forEach(style => {
-			let isDash = style.indexOf('-');
-		    let indexOfColon= style.indexOf(':');
-
-		    let key = isDash > -1
-		      ? (style.slice(0, isDash) + style.slice(isDash + 1, isDash + 2).toUpperCase() + style.slice(isDash + 2, indexOfColon))
-		      : style.slice(0, indexOfColon);
-
-		    let isNum = style.slice(indexOfColon + 1);
-		    let value = isNaN(isNum) ? isNum.trim() : Number(isNum);
+		    let indexOfColon = style.indexOf(':');
+		    let key = toCamelCase(style.slice(0, indexOfColon));
+		    var value = style.slice(indexOfColon + 1);
+			var value = isNaN(value) ? value.trim() : Number(value);
 			styles[key.trim()] = value;
 		})
 

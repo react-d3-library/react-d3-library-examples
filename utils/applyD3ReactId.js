@@ -11,9 +11,34 @@ function applyD3ReactId(children, counter) {
       if(child.children.length) length = child.children.length;
 
       child['data-react-d3-id'] = child.localName + '.' + counter + '.' + parentCount + '.' + count;
-      child['__data__']
-        ? result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = child['__data__']
-        : result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = null
+
+      result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = {};
+
+      child.hasOwnProperty('__data__')
+        ? result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__data__'] = child['__data__']
+        : result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__data__'] = null
+
+      if(child['__on']) {
+        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__on'] = child['__on']
+      }
+
+      if(child['__onload']){
+        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__onload'] = child['__onload']
+
+      }
+
+      if(child['__zoom']) {
+        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__zoom'] = child['__zoom']
+      }
+
+      if(child['__transition__']) {
+        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__transition__'] = child['__transition__']
+      }
+
+      if(child['__onmousemove']) {
+        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__onmousemove'] = child['__onmousemove']
+      }
+
 
       if(count === length) count = 0, parentCount++;
 
@@ -26,7 +51,6 @@ function applyD3ReactId(children, counter) {
 
   apply(children);
   result.children = children;
-
   return result;
 }
 
