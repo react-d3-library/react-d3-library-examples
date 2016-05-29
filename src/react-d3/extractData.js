@@ -30,7 +30,7 @@ module.exports = (nodes) => {
     output.tag = obj.localName;
 
     if(!obj['data-react-d3-id']) {
-      nodeId = applyD3ReactId(Array.prototype.slice.call(obj.children), i)
+      nodeId = applyD3ReactId([obj], i)
       for(var key in nodeId.state) {
         extractedData.state[key] = nodeId.state[key]
       }
