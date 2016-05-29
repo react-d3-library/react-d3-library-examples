@@ -30,7 +30,8 @@ module.exports = (nodes) => {
     output.tag = obj.localName;
 
     if(!obj['data-react-d3-id']) {
-      nodeId = applyD3ReactId(Array.prototype.slice.call(obj.children), i)
+      //passing in the obj, rather than the children, so parent svg can all get data-react-d3-id
+      nodeId = applyD3ReactId([obj], i);
       for(var key in nodeId.state) {
         extractedData.state[key] = nodeId.state[key]
       }
@@ -57,6 +58,7 @@ module.exports = (nodes) => {
     if(!obj['data-react-d3-id']) {
       output['data-react-d3-id'] = output.tag + '.' + i + '.' + 0 + '.' + 0;
       output.props.key = output.tag + '.' + i + '.' + 0 + '.' + 0;
+      extractedData.state[output.tag + '.' + i + '.' + 0 + '.' + 0] = {};
     } else {
       output['data-react-d3-id'] = obj['data-react-d3-id'];
       output.props.key = obj['data-react-d3-id'];
@@ -66,6 +68,5 @@ module.exports = (nodes) => {
   });
 
   extractedData.mappedData = mappedData;
-
   return extractedData;
 }
