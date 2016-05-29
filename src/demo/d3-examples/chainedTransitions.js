@@ -6,7 +6,7 @@ var margin = {top: 40, right: 40, bottom: 40, left: 40},
     height = 1000 - margin.top - margin.bottom;
 
 var y = d3.scale.ordinal()
-    .domain(d3.range(300))
+    .domain(d3.range(50))
     .rangePoints([0, height]);
 
 var z = d3.scale.linear()
@@ -30,4 +30,31 @@ svg.selectAll("circle")
     .style("fill", function(d) { return z(Math.abs(d % 20 - 10)); })
 
 
+     svg.on("load", function(){
+       applyTransition()
+     });
+
+function applyTransition() {
+    // console.log(d3.selectAll("circle"))
+    d3.selectAll("circle")
+        .transition()
+        .duration(500)
+        .delay(function(d) { return d * 40; })
+        .each(slide);
+
+    function slide() {
+      var circle = d3.select(this);
+      (function repeat() {
+        circle = circle.transition()
+            .attr("cx", width)
+          .transition()
+            .attr("cx", 0)
+            .each("end", repeat);
+      })();
+
+    }
+}
+
 module.exports = div
+
+
