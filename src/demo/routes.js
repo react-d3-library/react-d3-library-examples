@@ -23,6 +23,7 @@ var DNAHelix = require('./components/convertDNAHelix');
 var StackedToBars = require('./components/convertStackedToBars');
 var GrowTree = require('./components/convertGrowTree');
 var VoronoiDiagram = require('./components/convertVoronoiDiagram');
+var MazeHover = require('./components/convertMazeHover');
 
 
 module.exports = (
@@ -50,6 +51,7 @@ module.exports = (
       <Route path='stackedToBars' component={StackedToBars} />
       <Route path='growTree' component={GrowTree} />
       <Route path='voronoiDiagram' component={VoronoiDiagram} />
+      <Route path='mazeHover' component={MazeHover} />
     </Route>
   </Router>
 )
