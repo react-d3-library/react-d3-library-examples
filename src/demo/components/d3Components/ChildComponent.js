@@ -39,14 +39,6 @@ module.exports = React.createClass({
           
       }
 
-      if(state[rd3Id]['__onmousemove']) {
-        // reactD3Elements[i]['__onmousemove'] = state[rd3Id]['__onmousemove']
-
-        reactD3Elements[i].addEventListener('mousemove', state[rd3Id]['__onmousemove'])
-    
-          
-      }
-
       if(state[rd3Id]['__zoom']) {
         reactD3Elements[i]['__zoom'] = state[rd3Id]['__zoom']
       }
@@ -61,6 +53,26 @@ module.exports = React.createClass({
 
       if(state[rd3Id]['__transition__']) {
         reactD3Elements[i]['__transition__'] = state[rd3Id]['__transition__']
+      }
+
+      if(state[rd3Id]['__chart__']) {
+        reactD3Elements[i]['__chart__'] = state[rd3Id]['__chart__']
+      }
+
+      //register all the event listeners
+      for(var key in state[rd3Id]) {
+
+        if(key !== '__data__' && 
+           key !== '__zoom' && 
+           key !== '__onload' && 
+           key !== '__transition__' && 
+           key !== '__chart__' &&
+           key !== 'data-react-d3-id') {
+
+              let index = key.indexOf('.');
+              let eventName = index > 0 ? key.slice(4, index) : key.slice(4)
+              reactD3Elements[i].addEventListener(eventName, state[rd3Id][key])
+        }
       }
     }
 
