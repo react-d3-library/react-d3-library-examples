@@ -29,6 +29,7 @@ module.exports = React.createClass({
           <li><Link to="/stackedToBars">Stacked To Grouped Bars</Link></li>
           <li><Link to="/growTree">Grow Tree</Link></li>
           <li><Link to="/voronoiDiagram">Voronoi Diagram</Link></li>
+          <li><Link to="/mazeHover">Maze Hover</Link></li>
         </nav>
       </div>
     )

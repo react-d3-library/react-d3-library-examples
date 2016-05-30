@@ -18,25 +18,34 @@ var canvas = d3.select(div).append("canvas")
     .attr("width", width)
     .attr("height", height);
 
-var context = canvas.node().getContext("2d");
-var image = new Image;
-image.src = "IMG_1736.JPG";
-image.onload = start;
 
-function start() {
-  context.drawImage(image, 0, 0);
-  image = context.getImageData(0, 0, width, height);
-  voronoi(samples).forEach(function(cell) {
-    var x = Math.floor(cell.point[0]),
-        y = Math.floor(cell.point[1]),
-        i = (y * width + x) << 2;
-    context.fillStyle = d3.rgb(image.data[i + 0], image.data[i + 1], image.data[i + 2]) + "";
-    context.beginPath();
-    context.moveTo(cell[0][0], cell[0][1]);
-    for (var i = 1, n = cell.length; i < n; ++i) context.lineTo(cell[i][0], cell[i][1]);
-    context.closePath();
-    context.fill();
-  });
+canvas.on("load", function(){
+    getContext()
+});
+
+function getContext(){
+
+  var canvas = d3.select('canvas');
+  var context = canvas.node().getContext("2d");
+  var image = new Image;
+  image.src = "IMG_1736.JPG";
+  image.onload = start;
+
+  function start() {
+    context.drawImage(image, 0, 0);
+    image = context.getImageData(0, 0, width, height);
+    voronoi(samples).forEach(function(cell) {
+      var x = Math.floor(cell.point[0]),
+          y = Math.floor(cell.point[1]),
+          i = (y * width + x) << 2;
+      context.fillStyle = d3.rgb(image.data[i + 0], image.data[i + 1], image.data[i + 2]) + "";
+      context.beginPath();
+      context.moveTo(cell[0][0], cell[0][1]);
+      for (var i = 1, n = cell.length; i < n; ++i) context.lineTo(cell[i][0], cell[i][1]);
+      context.closePath();
+      context.fill();
+    });
+  }
 }
 
 function bestCandidateSampler(width, height, numCandidates, numSamplesMax) {
