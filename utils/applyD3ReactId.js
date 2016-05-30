@@ -8,38 +8,14 @@ function applyD3ReactId(children, counter) {
   function apply(parent) {
     count++;
     parent.forEach( (child, i) => {
+      var d3Attributes = Object.keys(child);
+      var id = child.localName + '.' + counter + '.' + parentCount + '.' + count;
+      var currentNode = child['data-react-d3-id'] = id;
+      var resultObj = result.state[id] = {};
+
       if(child.children.length) length = child.children.length;
-
-      child['data-react-d3-id'] = child.localName + '.' + counter + '.' + parentCount + '.' + count;
-
-      result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count] = {};
-
-      child.hasOwnProperty('__data__')
-        ? result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__data__'] = child['__data__']
-        : result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__data__'] = null
-
-      if(child['__on']) {
-        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__on'] = child['__on']
-      }
-
-      if(child['__onload']){
-        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__onload'] = child['__onload']
-
-      }
-
-      if(child['__zoom']) {
-        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__zoom'] = child['__zoom']
-      }
-
-      if(child['__transition__']) {
-        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__transition__'] = child['__transition__']
-      }
-
-      if(child['__onmousemove']) {
-        result.state[child.localName + '.' + counter + '.' + parentCount + '.' + count]['__onmousemove'] = child['__onmousemove']
-      }
-
-
+      if(d3Attributes.length) d3Attributes.forEach( (key) => { resultObj[key] = child[key]; })
+      else  resultObj['__data__'] = null;
       if(count === length) count = 0, parentCount++;
 
       return child.children.length
