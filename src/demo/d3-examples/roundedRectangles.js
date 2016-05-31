@@ -1,7 +1,6 @@
 //d3 v3
 var d3 = require('d3');
 var div = document.createElement('div');
-var d3_timer = require('d3-timer');
 
 var mouse = [480, 250],
     count = 0;
@@ -33,18 +32,19 @@ svg.on("mousemove", function() {
   mouse = d3.mouse(this);
 });
 
-var timer = addTimer;
 // Create .on('load') function to wrap timer and transformations in
-svg.on("load", function() {
-  addTimer();
+svg.on("load", function(){
+  this.hasTimer = true;
+  var that = this
+  addTimer(that);
 });
 
 // Fuction that will be called on load with timer inside
-function addTimer() {
+function addTimer(that) {
 
   var g = d3.select('svg').selectAll('g');
 
-  d3_timer.timer(function() {
+  d3.timer(function() {
     count++;
     console.log(count);
     g.attr("transform", function(d, i) {
@@ -53,6 +53,7 @@ function addTimer() {
       d.angle += Math.sin((count + i) / 10) * 7;
       return "translate(" + d.center + ")rotate(" + d.angle + ")";
     });
+    if(that.hasTimer === false) return true;
   });
 
 }
