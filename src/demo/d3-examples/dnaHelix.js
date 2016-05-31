@@ -29,4 +29,27 @@ g.selectAll("ellipse")
     .attr("ry", 7)
     .attr("fill", "#bbb");
 
+// Create .on('load') function to wrap timer and transformations in
+svg.on("load", function(){
+  addTimer();
+});
+
+// Fuction that will be called on load with timer inside
+function addTimer() {
+
+  var g = d3.select('svg').selectAll('g');
+
+  var width = 500,
+      height = 500,
+      n = 20;
+
+  d3.timer(function(t) {
+    console.log(t);
+    g.attr("transform", function(d) {
+        return "translate(" + [width / 2, (d + 1) * height / (n + 1)] + ")scale(" + (Math.sin(d / 2 - t / 1000) + 1) / 2 + ",1)";
+    });
+  });
+
+}
+
 module.exports = div;
