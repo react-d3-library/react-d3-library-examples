@@ -25,21 +25,26 @@ module.exports = (attributesObject, node) => {
     attributes['data-react-d3-id'] = node['data-react-d3-id']
   }
 
-  if(node['__data__']) {
-    attributes['__data__'] = node['__data__'];
+  // if(node['__data__']) {
+  //   attributes['__data__'] = node['__data__'];
+  // }
+
+  // if(node['__on']) {
+  //   attributes['__on'] = node['__on']
+  // }
+
+  // if(node['__transition__']) {
+  //   attributes['data-transition'] = node['__transition__'];
+  // }
+
+  // if(node['__onmousemove']) {
+  //   attributes['__onmousemove'] = node['__onmousemove'];
+  // }
+
+  for(var key in node) {
+    if(key.slice(0, 2) === '__') attributes[key] = node[key];
   }
 
-  if(node['__on']) {
-    attributes['__on'] = node['__on']
-  }
-
-  if(node['__transition__']) {
-    attributes['data-transition'] = node['__transition__'];
-  }
-
-  if(node['__onmousemove']) {
-    attributes['__onmousemove'] = node['__onmousemove'];
-  }
 
   
 

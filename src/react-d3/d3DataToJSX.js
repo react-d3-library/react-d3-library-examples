@@ -9,18 +9,21 @@ const extractData = require('./extractData');
 // var counter = -1;
 
 // Extract each DOM element in the node
-const getRawData = node => {
 
-  var output = [];
+// removed this function so that parent SVG's can properly be mapped like all of the children
 
-  for(var key in node.childNodes) {
+// const getRawData = node => {
 
-    if(!isNaN(key) && node.childNodes[key]) output.push(node.childNodes[key]);
+//   var output = [];
 
-  }
+//   for(var key in node.childNodes) {
 
-  return output;
-}
+//     if(!isNaN(key) && node.childNodes[key]) output.push(node.childNodes[key]);
+
+//   }
+
+//   return output;
+// }
 
 // Build React elements inside an svg
 const build = nodes => {
@@ -137,7 +140,7 @@ const build = nodes => {
 //Build raw data and then build the react DOM
 module.exports = nodes => {
 
-  var rawData = getRawData(nodes);
+  // var rawData = getRawData(nodes);
 
-  return build(rawData);
+  return build(nodes);
 }

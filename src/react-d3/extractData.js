@@ -30,16 +30,13 @@ module.exports = (nodes) => {
     output.tag = obj.localName;
 
     if(!obj['data-react-d3-id']) {
-
-      //passing in the obj, rather than the children, so parent svg can all get data-react-d3-id
-      nodeId = applyD3ReactId([obj], i);
+      nodeId = applyD3ReactId(Array.prototype.slice.call(obj.children), i);
       for(var key in nodeId.state) {
         extractedData.state[key] = nodeId.state[key]
       }
     } else {
       nodeId.children = obj.children;
     }
-
     // Create an array for all the child nodes
     output.children = nodeId.children;
 
