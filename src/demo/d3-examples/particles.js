@@ -19,7 +19,8 @@ svg.append("rect")
     .attr("width", width)
     .attr("height", height)
     .attr('class', 'particlesRect')
-    .on("ontouchstart" in document ? "touchmove" : "mousemove", particle);
+    .on("ontouchstart" in document ? "touchmove" : "mousemove", particle)
+
 
 function particle() {
   var m = d3.mouse(this);

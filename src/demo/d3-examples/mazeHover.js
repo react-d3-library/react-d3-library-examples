@@ -33,6 +33,7 @@ canvas.on('load', function(){
 	var cells = generateMaze(cellWidth, cellHeight) // each cell’s edge bits
     var parents = computeParents(cells, cellWidth, cellHeight)
 
+
 	function mousemoved() {
 		var m = d3.mouse(this),
 		    x = Math.max(0, Math.min(cellWidth - 1, Math.floor((m[0] - marginLeft - cellSpacing) / (cellSize + cellSpacing)))),
@@ -41,6 +42,12 @@ canvas.on('load', function(){
 		fillPath(hoverIndex);
 		context.fillStyle = "#f00";
 		fillPath(hoverIndex = y * cellWidth + x);
+
+		var counter = 0;
+    	setInterval(function(){
+    		counter++
+    		console.log(counter);
+    	}, 3000);
 	
 	}
 

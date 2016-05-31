@@ -27,7 +27,6 @@ module.exports = React.createClass({
       }
 
       if(state[rd3Id]['__data__'] !== null) {
-         // console.log('__data__', state[rd3Id]['__data__'])
         reactD3Elements[i]['__data__'] = state[rd3Id]['__data__']
       }
 
@@ -44,7 +43,7 @@ module.exports = React.createClass({
       }
 
        if(state[rd3Id]['__onload']) {
-        var callback = state[rd3Id]['__onload']
+        var callback = state[rd3Id]['__onload'].bind(this);
         setTimeout(function(){
           callback();
         }, 0)
@@ -69,6 +68,7 @@ module.exports = React.createClass({
            key !== '__chart__' &&
            key !== 'data-react-d3-id') {
 
+              reactD3Elements[i][key] = state[rd3Id][key]
               let index = key.indexOf('.');
               let eventName = index > 0 ? key.slice(4, index) : key.slice(4)
               reactD3Elements[i].addEventListener(eventName, state[rd3Id][key])
@@ -76,6 +76,13 @@ module.exports = React.createClass({
       }
     }
 
+  },
+
+  componentWillUnmount: function(){
+    var oldElement = ReactDOM.findDOMNode(this)
+    var newElement = oldElement.cloneNode(true);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+    if(this.hasTimer) this.hasTimer = false
   },
 
   render: function() {
