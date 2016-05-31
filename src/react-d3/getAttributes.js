@@ -33,9 +33,9 @@ module.exports = (attributesObject, node) => {
   //   attributes['__on'] = node['__on']
   // }
 
-  // if(node['__transition__']) {
-  //   attributes['data-transition'] = node['__transition__'];
-  // }
+  if(node['__transition__']) {
+    attributes['data-transition'] = node['__transition__'];
+  }
 
   // if(node['__onmousemove']) {
   //   attributes['__onmousemove'] = node['__onmousemove'];

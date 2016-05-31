@@ -5,25 +5,7 @@ var w = 960,
     h = 500;
 
 
-// d3.select(window)
-//   .on("keydown", function() {
-//     // shift
-//     if(d3.event.keyCode == 16) {
-//       zoomToAdd = false
-//     }
-//     // s
-//     if(d3.event.keyCode == 83) {
-//       simulate = !simulate
-//       if(simulate) {
-//         force.start()
-//       } else {
-//         force.stop()
-//       }
-//     }
-//   })
-//   .on("keyup", function() {
-//     zoomToAdd = true
-//   })
+
 
 var svg = d3.select(div)
         .append("svg")
@@ -119,6 +101,6 @@ var svg = d3.select(div)
               link.exit().remove()
               if(!simulate) force.stop()
           }
-        })      
+        })
        
 module.exports = div;

@@ -31,12 +31,13 @@ g.selectAll("ellipse")
 
 // Create .on('load') function to wrap timer and transformations in
 svg.on("load", function(){
-  addTimer();
+  this.hasTimer = true;
+  var that = this
+  addTimer(that);
 });
 
 // Fuction that will be called on load with timer inside
-function addTimer() {
-
+function addTimer(that) { 
   var g = d3.select('svg').selectAll('g');
 
   var width = 500,
@@ -44,12 +45,14 @@ function addTimer() {
       n = 20;
 
   d3.timer(function(t) {
-    console.log(t);
+    if(t % 100 === 0) console.log(t)
     g.attr("transform", function(d) {
         return "translate(" + [width / 2, (d + 1) * height / (n + 1)] + ")scale(" + (Math.sin(d / 2 - t / 1000) + 1) / 2 + ",1)";
     });
+   if(that.hasTimer === false) return true;
   });
 
 }
+
 
 module.exports = div;
