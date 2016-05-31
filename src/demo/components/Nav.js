@@ -8,6 +8,7 @@ module.exports = React.createClass({
         <nav className="navbar">
         	<li><Link to="/">Home</Link></li>
           <li><Link to="/bubbleChart">Bubble Chart</Link></li>
+          <li><Link to="/binaryTree">Binary Tree</Link></li>
           <li><Link to="/circleEventHandler">Circle Event</Link></li>
           <li><Link to="/radialTree">Radial Tree</Link></li>
           <li><Link to="/colorMesh">colorMesh</Link></li>
