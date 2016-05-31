@@ -36,7 +36,26 @@ svg.selectAll("path")
     .attr("d", area)
     .style("fill", function() { return color(Math.random()); });
 
-// Inspired by Lee Byron's test data generator.
+// On load function that will trigger the transitions
+svg.on('load', function() {
+  transition();
+});
+
+// This function will be triggered on load
+function transition() {
+
+  d3.selectAll("path")
+      .data(function() {
+        var d = layers1;
+        layers1 = layers0;
+        return layers0 = d;
+      })
+    .transition()
+      .duration(2500)
+      .attr("d", area);
+
+}
+
 function bumpLayer(n) {
 
   function bump(a) {
