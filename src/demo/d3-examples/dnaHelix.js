@@ -29,14 +29,14 @@ g.selectAll("ellipse")
     .attr("ry", 7)
     .attr("fill", "#bbb");
 
-// Create .on('load') function to wrap timer and transformations in
-svg.on("load", function(){
+// Create .on('mount') function to wrap timer and transformations in
+svg.on("mount", function(){
   this.hasTimer = true;
   var that = this
   addTimer(that);
 });
 
-// Fuction that will be called on load with timer inside
+// Fuction that will be called on mount with timer inside
 function addTimer(that) { 
   var g = d3.select('svg').selectAll('g');
 

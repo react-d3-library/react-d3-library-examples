@@ -32,21 +32,19 @@ svg.on("mousemove", function() {
   mouse = d3.mouse(this);
 });
 
-// Create .on('load') function to wrap timer and transformations in
-svg.on("load", function(){
+// Create .on('mount') function to wrap timer and transformations in
+svg.on("mount", function(){
   this.hasTimer = true;
   var that = this
   addTimer(that);
 });
 
-// Fuction that will be called on load with timer inside
+// Fuction that will be called on mount with timer inside
 function addTimer(that) {
 
   var g = d3.select('svg').selectAll('g');
 
   d3.timer(function() {
-    count++;
-    console.log(count);
     g.attr("transform", function(d, i) {
       d.center[0] += (mouse[0] - d.center[0]) / (i + 5);
       d.center[1] += (mouse[1] - d.center[1]) / (i + 5);

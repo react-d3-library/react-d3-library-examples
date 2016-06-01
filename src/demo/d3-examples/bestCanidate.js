@@ -19,7 +19,7 @@ var canvas = d3.select(div).append("canvas")
     .attr("height", height);
 
 
-canvas.on("load", function(){
+canvas.on("mount", function(){
     getContext()
 });
 

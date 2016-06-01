@@ -30,7 +30,7 @@ svg.selectAll("circle")
     .style("fill", function(d) { return z(Math.abs(d % 20 - 10)); })
 
 
-     svg.on("load", function(){
+     svg.on("mount", function(){
        applyTransition()
      });
 

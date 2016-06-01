@@ -42,8 +42,8 @@ module.exports = React.createClass({
         reactD3Elements[i]['__zoom'] = state[rd3Id]['__zoom']
       }
 
-       if(state[rd3Id]['__onload']) {
-        var callback = state[rd3Id]['__onload'].bind(this);
+       if(state[rd3Id]['__onmount']) {
+        var callback = state[rd3Id]['__onmount'].bind(this);
         setTimeout(function(){
           callback();
         }, 0)
@@ -63,7 +63,7 @@ module.exports = React.createClass({
 
         if(key !== '__data__' && 
            key !== '__zoom' && 
-           key !== '__onload' && 
+           key !== '__onmount' && 
            key !== '__transition__' && 
            key !== '__chart__' &&
            key !== 'data-react-d3-id') {

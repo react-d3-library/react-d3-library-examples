@@ -37,7 +37,7 @@ svg.selectAll("path")
     .style("fill", function() { return color(Math.random()); });
 
 // On load function that will trigger the transitions
-svg.on('load', function() {
+svg.on('mount', function() {
   transition();
 });
 

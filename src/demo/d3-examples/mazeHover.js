@@ -24,7 +24,7 @@ var canvas = d3.select(div).append("canvas")
 
 
 
-canvas.on('load', function(){
+canvas.on('mount', function(){
 
 	var canvas = d3.select('canvas')
 		.on("ontouchstart" in document ? "touchmove" : "mousemove", mousemoved);
