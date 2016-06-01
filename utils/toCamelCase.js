@@ -14,7 +14,3 @@ module.exports = spinalCaseValue => {
 		}
 	})
 }
-
-
-
-

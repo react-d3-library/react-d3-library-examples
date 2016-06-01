@@ -1,6 +1,4 @@
-const createLineChart = require('./../basic-graphs/createLineChart');
-
-var data = {};
+const data = {};
 
 // Set margins for bar graph within svg element
 data.margins = {top: 20, right: 20, bottom: 30, left: 50};
@@ -25,7 +23,7 @@ data.orientYTicks = 'left';
 // If importing in tsv file, indicate filename as string
 // If no tsv file, leave as blank string
 // ** tsv file should be served as a static file **
-data.tsvFileName = 'lineChart.tsv';
+data.tsvFileName = '';
 
 // If importing in csv file, indicate filename as string
 // If no csv file, leave as blank string
@@ -96,4 +94,4 @@ data.lineClass = 'lineChart';
 
 */
 
-module.exports = createLineChart(data);
+export default data;

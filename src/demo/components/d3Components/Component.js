@@ -2,8 +2,7 @@ import React from 'react';
 const d3DataToJSX = require('./../../../react-d3/d3DataToJSX');
 const ChildComponent = require('./ChildComponent')
 
-
-module.exports = class extends React.Component{
+export default class extends React.Component{
 
   constructor(props) {
     super(props);

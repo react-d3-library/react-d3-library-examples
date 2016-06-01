@@ -1,5 +1,5 @@
 // Build data for a class pie chart
-var data = {};
+const data = {};
 
 // Define the width and height of the chart
 data.width = 960;
@@ -48,4 +48,4 @@ data.dataSet = [
 
 ] 
 
-module.exports = data;
+export default data;

@@ -1,5 +1,5 @@
 // Build data for a classic pie chart
-var data = {}
+const data = {}
 
 // Labels are displayed in component, quantities are calculated to define size of each slice
 data.dataSet = [
@@ -36,4 +36,4 @@ data.arcClass = 'arc';
 
 */
 
-module.exports = data;
+export default data;

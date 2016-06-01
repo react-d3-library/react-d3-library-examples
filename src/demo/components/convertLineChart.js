@@ -1,6 +1,6 @@
 import React from 'react';
-import node from './../d3-examples/lineChart';
-import D3StateContainer from './d3Components/Component';
+import lineData from './../d3-examples/lineChart';
+import LineChart from './d3Components/LineChart';
 
 module.exports = React.createClass({
 
@@ -9,13 +9,13 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function() {
-    this.setState({d3: node});
+    this.setState({d3: lineData});
   },
 
   render: function() {
     return (
       <div>
-        <D3StateContainer data={this.state.d3} />
+        <LineChart data={this.state.d3} />
       </div>
     )
   }

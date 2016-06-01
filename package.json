@@ -44,7 +44,7 @@
     "mocha": "^2.4.5",
     "nodemon": "^1.9.2",
     "react": "^15.0.2",
-    "react-d3-library": "^1.0.9",
+    "react-d3-library": "^1.1.0",
     "react-dom": "^15.0.2",
     "react-router": "^2.4.0"
   }

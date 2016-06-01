@@ -20,6 +20,7 @@ var ChainedTransitions = require('./components/convertChainedTransitions');
 var RainDrops = require('./components/convertRainDrops');
 var Particles = require('./components/convertParticles');
 var Streamgraph = require('./components/convertStreamgraph');
+var InteractiveStreamgraph = require('./components/convertInteractiveStreamgraph');
 var DNAHelix = require('./components/convertDNAHelix');
 var StackedToBars = require('./components/convertStackedToBars');
 var GrowTree = require('./components/convertGrowTree');
@@ -49,6 +50,7 @@ module.exports = (
       <Route path='rainDrops' component={RainDrops} />
       <Route path='particles' component={Particles} />
       <Route path='streamgraph' component={Streamgraph} />
+      <Route path='interactiveStreamgraph' component={InteractiveStreamgraph} />
       <Route path='dnaHelix' component={DNAHelix} />
       <Route path='stackedToBars' component={StackedToBars} />
       <Route path='growTree' component={GrowTree} />

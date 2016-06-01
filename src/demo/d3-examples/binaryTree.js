@@ -1,4 +1,5 @@
 var d3 = require('d3');
+
 var div = document.createElement('div');
 
 var branches = [];
