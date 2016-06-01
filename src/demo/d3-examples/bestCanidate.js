@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 
 var width = 2000,
@@ -14,7 +14,7 @@ while (s = sample()) samples.push(s);
 var voronoi = d3.geom.voronoi()
     .clipExtent([[0, 0], [width, height]]);
 
-var canvas = d3.select(div).append("canvas")
+var canvas = d3.select(node).append("canvas")
     .attr("width", width)
     .attr("height", height);
 
@@ -123,4 +123,4 @@ function bestCandidateSampler(width, height, numCandidates, numSamplesMax) {
   }
 }
 
-module.exports = div;
+module.exports = node;

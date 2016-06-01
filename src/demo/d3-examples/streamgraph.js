@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var n = 20, // number of layers
     m = 200, // number of samples per layer
@@ -26,7 +26,7 @@ var area = d3.svg.area()
     .y0(function(d) { return y(d.y0); })
     .y1(function(d) { return y(d.y0 + d.y); });
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -74,4 +74,4 @@ function bumpLayer(n) {
   return a.map(function(d, i) { return {x: i, y: Math.max(0, d)}; });
 }
 
-module.exports = div;
+module.exports = node;

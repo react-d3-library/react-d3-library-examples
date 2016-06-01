@@ -3,14 +3,14 @@ var d3 = require('d3');
 var width = 960,
     height = 500
 
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var width = Math.max(960, innerWidth),
     height = Math.max(500, innerHeight);
 
 var i = 0;
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", width)
     .attr("height", height)
     .style('background', '#222');
@@ -43,4 +43,4 @@ function particle() {
   d3.event.preventDefault();
 }
 
-module.exports = div;
+module.exports = node;

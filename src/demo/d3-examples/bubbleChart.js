@@ -1,6 +1,6 @@
 var d3 = require('d3');
 var flare = require('./flare');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var diameter = 960,
     format = d3.format(",d"),
@@ -11,7 +11,7 @@ var bubble = d3.layout.pack()
     .size([diameter, diameter])
     .padding(1.5);
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", diameter)
     .attr("height", diameter)
     .attr("class", "bubble");
@@ -49,4 +49,4 @@ function classes(flare) {
 }
 
 
-module.exports = div;
+module.exports = node;

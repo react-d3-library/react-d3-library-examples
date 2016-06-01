@@ -1,11 +1,11 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var width = 500,
     height = 500,
     n = 20;
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", width)
     .attr("height", height)
     .style("background", "#111");
@@ -54,4 +54,4 @@ function addTimer(that) {
 }
 
 
-module.exports = div;
+module.exports = node;

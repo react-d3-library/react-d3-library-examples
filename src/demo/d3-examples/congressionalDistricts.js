@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var width = 960,
     height = 600;
@@ -11,7 +11,7 @@ var projection = d3.geo.albersUsa()
 var path = d3.geo.path()
     .projection(projection);
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -56,4 +56,4 @@ function ready(error, us, congress) {
 
 // d3.select(self.frameElement).style("height", height + "px");
 
-module.exports = div
+module.exports = node

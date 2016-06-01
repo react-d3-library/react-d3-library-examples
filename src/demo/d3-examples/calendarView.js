@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 
 var width = 960,
@@ -13,7 +13,7 @@ var color = d3.scale.quantize()
     .domain([-.05, .05])
     .range(d3.range(11).map(function(d) { return "q" + d + "-11"; }));
 
-var svg = d3.select(div).selectAll("svg")
+var svg = d3.select(node).selectAll("svg")
     .data(d3.range(1990, 2011))
   .enter().append("svg")
     .attr("width", width)
@@ -71,4 +71,4 @@ function monthPath(t0) {
       + "H" + (w0 + 1) * cellSize + "Z";
 }
 
-module.exports = div
+module.exports = node

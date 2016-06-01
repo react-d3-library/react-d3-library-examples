@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var margin = {top: 40, right: 40, bottom: 40, left: 40},
     width = 960 - margin.left - margin.right,
@@ -14,7 +14,7 @@ var z = d3.scale.linear()
     .range(["hsl(62,100%,90%)", "hsl(228,30%,20%)"])
     .interpolate(d3.interpolateHcl);
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -55,6 +55,6 @@ function applyTransition() {
     }
 }
 
-module.exports = div
+module.exports = node
 
 
