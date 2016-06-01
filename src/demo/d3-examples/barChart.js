@@ -1,5 +1,5 @@
 // Build data for a classic bar chart
-var data = {}
+const data = {}
 
 // Labels are displayed in component, quantities are calculated to define height of each bar
 data.dataSet = [
@@ -27,13 +27,16 @@ data.yAxisLabel = 'My Money!';
 
 // Colors are optional for each bar
 // If colors are not given, bars will default to 'steelblue'
-data.fill = ["blue", "orange", "purple", 'green', 'red', "yellow", 'lemonChiffon'];
+data.fill = [];
 
 //Define the width of the svg element on the page
 data.width = 960;
 
 //Define the height of the bar chart
 data.height = 700;
+
+// Define tick intervals for y-axis
+data.ticks = 10;
 
 //Define a class for the svg element for styling
 data.barClass = 'bar';
@@ -47,4 +50,4 @@ data.barClass = 'bar';
 
 */
 
-module.exports = data;
+export default data;

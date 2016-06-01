@@ -1,92 +1,24 @@
 import React from 'react';
-const d3DataToJSX = require('./../../../react-d3/d3DataToJSX');
-const ChildComponent = require('./ChildComponent');
-const d3 = require('d3');
+import d3DataToJSX from './../../../react-d3/d3DataToJSX';
+import ChildComponent from './ChildComponent';
+import createBarChart from './../../basic-graphs/createBarChart';
 
-function createBarChart (data) {
-
-  if (data.fill) {
-    data.dataSet.forEach((el, i) => el.fill = data.fill[i]);
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {d3DOM: [], state: []};
   }
 
-  var div = document.createElement('div');
-
-  var margin = data.margins,
-      width = data.width - margin.left - margin.right,
-      height = data.height - margin.top - margin.bottom;
-
-  var x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
-
-  var y = d3.scale.linear().range([height, 0]);
-
-  var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("bottom");
-
-  var yAxis = d3.svg.axis()
-      .scale(y)
-      .orient("left")
-      .ticks(10);
-
-  var svg = d3.select(div).append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
-
-  x.domain(data.dataSet.map(function(d) { return d.label; }));
-  y.domain([0, d3.max(data.dataSet, function(d) { return d.value; })]);
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-    .selectAll("text")
-      .style("text-anchor", "end")
-      .attr("dx", "-.8em")
-      .attr("dy", "-.55em")
-      .attr("transform", "rotate(-90)" );
-
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text(data.yAxisLabel);
-
-  svg.selectAll("bar")
-      .data(data.dataSet)
-    .enter().append("rect")
-      .style("fill", d => d.fill || "steelblue")
-      .attr("x", d => x(d.label))
-      .attr("width", x.rangeBand())
-      .attr("y", d => y(d.value))
-      .attr("height", d => height - y(d.value))
-      .attr('fill', d => d.fill);
-
-  return div;
-}
-
-module.exports = React.createClass({
-
-  getInitialState: function() {
-    return {d3DOM: [], state: []}
-  },
-
-  componentWillReceiveProps: function(nextProps) {
+  componentWillReceiveProps(nextProps) {
     let d3Data = d3DataToJSX(createBarChart(nextProps.data));
     this.setState({d3DOM: d3Data.mappedData, state: d3Data.state})
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
         <ChildComponent data={this.state} />
       </div>
     )
   }
-});
+};

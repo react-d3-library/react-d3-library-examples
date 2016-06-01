@@ -26,6 +26,7 @@ module.exports = React.createClass({
           <li><Link to="/rainDrops">Rain Drops</Link></li>
           <li><Link to="/particles">Particles</Link></li>
           <li><Link to="/streamgraph">Streamgraph</Link></li>
+          <li><Link to="/interactiveStreamgraph">Interactive Streamgraph</Link></li>
           <li><Link to="/dnaHelix">DNA Helix</Link></li>
           <li><Link to="/stackedToBars">Stacked To Grouped Bars</Link></li>
           <li><Link to="/growTree">Grow Tree</Link></li>

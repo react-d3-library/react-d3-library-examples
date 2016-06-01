@@ -1,5 +1,5 @@
 //Build data to pass to createScatterPlot;
-var data = {}
+const data = {}
 
 // Define class names for CSS styling;
 data.x_axis_class = "x axis";
@@ -170,4 +170,4 @@ data.dataSet = [
 
 ]
 
-module.exports = data;
+export default data;
