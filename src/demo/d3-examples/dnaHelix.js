@@ -45,7 +45,6 @@ function addTimer(that) {
       n = 20;
 
   d3.timer(function(t) {
-    if(t % 100 === 0) console.log(t)
     g.attr("transform", function(d) {
         return "translate(" + [width / 2, (d + 1) * height / (n + 1)] + ")scale(" + (Math.sin(d / 2 - t / 1000) + 1) / 2 + ",1)";
     });
