@@ -1,5 +1,5 @@
-var div = document.createElement("div");
-var svg = d3.select(div).append("svg")
+var node = document.createElement("div");
+var svg = d3.select(node).append("svg")
   .attr({
     width: 500,
     height: 500
@@ -16,4 +16,4 @@ node.enter().append("circle")
   .attr("fill", function(d) { return "blue"; })
   .on("click", function(d){ console.log(arguments) })
 
-module.exports = div
+module.exports = node

@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
  var n = 4, // number of layers
     m = 58, // number of samples per layer
@@ -30,7 +30,7 @@ var xAxis = d3.svg.axis()
     .tickPadding(6)
     .orient("bottom");
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -125,7 +125,7 @@ function applyFunctions(){
 	}
 }
 
-module.exports = div
+module.exports = node
 
 
 

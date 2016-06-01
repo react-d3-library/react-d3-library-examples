@@ -1,11 +1,10 @@
-//d3 v3
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var mouse = [480, 250],
     count = 0;
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", 960)
     .attr("height", 500);
 
@@ -56,4 +55,4 @@ function addTimer(that) {
 
 }
 
-module.exports = div;
+module.exports = node;

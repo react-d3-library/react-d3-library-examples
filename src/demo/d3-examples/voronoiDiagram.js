@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var w = 960,
     h = 500;
@@ -7,7 +7,7 @@ var w = 960,
 
 
 
-var svg = d3.select(div)
+var svg = d3.select(node)
         .append("svg")
         .attr("width", w)
         .attr("height", h)
@@ -103,4 +103,4 @@ var svg = d3.select(div)
           }
         })
        
-module.exports = div;
+module.exports = node;

@@ -1,6 +1,6 @@
 var d3 = require('d3');
 var flare = require('./flare');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var diameter = 960;
 
@@ -11,7 +11,7 @@ var tree = d3.layout.tree()
 var diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", diameter)
     .attr("height", diameter - 150)
     .append("g")
@@ -44,4 +44,4 @@ node.append("text")
 
 d3.select(self.frameElement).style("height", diameter - 150 + "px");
 
-module.exports = div
+module.exports = node

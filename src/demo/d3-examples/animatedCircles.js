@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 (function() {
 d3.layout.grid = function() {
@@ -129,7 +129,7 @@ var data = d3.range(50).map(function(d) {
   };
 });
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
   .attr({
     width: width,
     height: height
@@ -151,4 +151,4 @@ node.enter().append("circle")
 
 d3.select(self.frameElement).style("height", height + "px");
 
-module.exports = div;
+module.exports = node;

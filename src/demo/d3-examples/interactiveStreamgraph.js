@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 chart("streamgraph.csv", "orange");
 
@@ -61,13 +61,13 @@ function chart(csvpath, color) {
       .y0(function(d) { return y(d.y0); })
       .y1(function(d) { return y(d.y0 + d.y); });
 
-  var svg = d3.select(div).append("svg")
+  var svg = d3.select(node).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  var tooltip = d3.select(div)
+  var tooltip = d3.select(node)
       .append("div")
       .attr("class", "remove")
       .style("position", "absolute")
@@ -155,7 +155,7 @@ function chart(csvpath, color) {
         d3.select('.remove').html( "<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "hidden");
       });
       
-    var vertical = d3.select(div)
+    var vertical = d3.select(node)
           .append("div")
           .attr("class", "remove")
           .style("position", "absolute")
@@ -167,7 +167,7 @@ function chart(csvpath, color) {
           .style("left", "0px")
           .style("background", "#fff");
 
-    d3.select(div).select('svg')
+    d3.select(node).select('svg')
         .on("mousemove", function(){  
            var mousex = d3.mouse(this);
            mousex = mousex[0] + 10;
@@ -181,4 +181,4 @@ function chart(csvpath, color) {
   });
 }
 
-module.exports = div;
+module.exports = node;

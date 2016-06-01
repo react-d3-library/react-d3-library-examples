@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var width = 960,
     height = 960;
@@ -17,7 +17,7 @@ var cellSize = 4,
     marginTop = Math.round((height - cellHeight * cellSize - (cellHeight + 1) * cellSpacing) / 2),
 	hoverIndex = cellWidth - 1;
 
-var canvas = d3.select(div).append("canvas")
+var canvas = d3.select(node).append("canvas")
     .attr("width", width)
     .attr("height", height)
     .style('background-color', 'black');
@@ -185,4 +185,4 @@ canvas.on('mount', function(){
 
 })  
 
-module.exports = div
+module.exports = node

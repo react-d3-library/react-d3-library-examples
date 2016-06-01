@@ -1,6 +1,5 @@
 var d3 = require('d3');
-
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 var branches = [];
 var seed = {i: 0, x: 420, y: 600, a: 0, l: 130, d:0}; // a = angle, l = length, d = depth
@@ -75,7 +74,7 @@ function highlightParents(d) {
 }
 
 function create() {
-  d3.select(div).append('svg')
+  d3.select(node).append('svg')
     .attr('height', 960)
     .attr('width', 960)
     .selectAll('line')
@@ -105,7 +104,7 @@ function update() {
 
 regenerate(true);
 
-d3.select(div).select('svg')
+d3.select(node).select('svg')
   .on('click', regenerate);
 
-module.exports = div;
+module.exports = node;

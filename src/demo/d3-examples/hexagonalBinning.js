@@ -1,5 +1,5 @@
 var d3 = require('d3');
-console.log(d3);
+
 var margin = {top: 40, right: 20, bottom: 20, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;

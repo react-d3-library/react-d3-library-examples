@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var div = document.createElement('div');
+var node = document.createElement('div');
 
 (function() {
   var radians = Math.PI / 180;
@@ -79,7 +79,7 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.index); })
     .y(function(d) { return y(d.time); });
 
-var svg = d3.select(div).append("svg")
+var svg = d3.select(node).append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -138,4 +138,4 @@ function mergesort(array) {
 
 d3.select(self.frameElement).style("height", height + margin.top + margin.bottom + "px");
 
-module.exports = div;
+module.exports = node;
