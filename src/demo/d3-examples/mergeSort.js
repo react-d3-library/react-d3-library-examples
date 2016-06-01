@@ -94,7 +94,8 @@ svg.append("g")
     .attr("d", function(d) { return line(d.indexes); })
   .select(function() { return this.parentNode.insertBefore(this.cloneNode(false), this); })
     .attr("class", "line-haloMS")
-    .style("stroke", null);
+    .style("stroke", null)
+    .on('mount', function(){});
 
 function interpolateLine(points) {
   var p0 = points[0],

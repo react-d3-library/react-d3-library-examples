@@ -11,7 +11,7 @@ var svg = d3.select(div)
         .append("svg")
         .attr("width", w)
         .attr("height", h)
-        .on('load', function(){
+        .on('mount', function(){
 
           var w = 960,
               h = 500,
