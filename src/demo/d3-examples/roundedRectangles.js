@@ -44,6 +44,7 @@ function addTimer(that) {
   var g = d3.select('svg').selectAll('g');
 
   d3.timer(function() {
+    count++
     g.attr("transform", function(d, i) {
       d.center[0] += (mouse[0] - d.center[0]) / (i + 5);
       d.center[1] += (mouse[1] - d.center[1]) / (i + 5);
