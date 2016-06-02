@@ -25,7 +25,7 @@ svg.append("rect")
 function particle() {
   var m = d3.mouse(this);
   var svg = d3.select('svg');
-
+  console.log(width)
   svg.insert("circle", "rect")
       .attr("cx", m[0])
       .attr("cy", m[1])

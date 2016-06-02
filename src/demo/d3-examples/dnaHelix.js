@@ -31,13 +31,15 @@ g.selectAll("ellipse")
 
 // Create .on('mount') function to wrap timer and transformations in
 svg.on("mount", function(){
+  // has Timer property that will be binded to the React component
   this.hasTimer = true;
+  //pass down a reference to this to the addTimer function
   var that = this
   addTimer(that);
 });
 
 // Fuction that will be called on mount with timer inside
-function addTimer(that) { 
+function addTimer(that) {
   var g = d3.select('svg').selectAll('g');
 
   var width = 500,
@@ -46,9 +48,12 @@ function addTimer(that) {
 
   d3.timer(function(t) {
     g.attr("transform", function(d) {
-        return "translate(" + [width / 2, (d + 1) * height / (n + 1)] + ")scale(" + (Math.sin(d / 2 - t / 1000) + 1) / 2 + ",1)";
+        return "translate(" + [width / 2, (d + 1) * height / (n + 1)] +
+                ")scale(" + (Math.sin(d / 2 - t / 1000) + 1) / 2 + ",1)";
     });
+    //return true if hasTimer has been set to false
    if(that.hasTimer === false) return true;
+
   });
 
 }
