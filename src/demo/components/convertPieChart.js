@@ -1,6 +1,7 @@
 import React from 'react';
 import node from './../d3-examples/pieChart';
-import PieChart from './d3Components/PieChart'
+import rd3 from 'react-d3-library';
+const PieChart = rd3.PieChart;
 
 module.exports = React.createClass({
 
