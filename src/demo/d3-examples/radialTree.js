@@ -26,16 +26,16 @@ var link = svg.selectAll(".link")
     .attr("class", "linkRT")
     .attr("d", diagonal);
 
-var node = svg.selectAll(".node")
+var Node = svg.selectAll(".node")
     .data(nodes)
     .enter().append("g")
     .attr("class", "nodeRT")
     .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
 
-node.append("circle")
+Node.append("circle")
     .attr("r", 4.5);
 
-node.append("text")
+Node.append("text")
     .attr("dy", ".31em")
     .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
     .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
@@ -43,5 +43,6 @@ node.append("text")
 
 
 d3.select(self.frameElement).style("height", diameter - 150 + "px");
+
 
 module.exports = node

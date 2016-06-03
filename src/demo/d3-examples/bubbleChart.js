@@ -16,21 +16,21 @@ var svg = d3.select(node).append("svg")
     .attr("height", diameter)
     .attr("class", "bubble");
 
-var node = svg.selectAll(".node")
+var Node = svg.selectAll(".node")
     .data(bubble.nodes(classes(flare))
     .filter(function(d) { return !d.children; }))
     .enter().append("g")
     .attr("class", "node")
     .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-  node.append("title")
+  Node.append("title")
       .text(function(d) { return d.className + ": " + format(d.value); });
 
-  node.append("circle")
+  Node.append("circle")
       .attr("r", function(d) { return d.r; })
       .style("fill", function(d) { return color(d.packageName); });
 
-  node.append("text")
+  Node.append("text")
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
       .text(function(d) { return d.className.substring(0, d.r / 3); });
@@ -39,9 +39,9 @@ var node = svg.selectAll(".node")
 function classes(flare) {
   var classes = [];
 
-  function recurse(name, node) {
-    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
-    else classes.push({packageName: name, className: node.name, value: node.size});
+  function recurse(name, Node) {
+    if (Node.children) Node.children.forEach(function(child) { recurse(Node.name, child); });
+    else classes.push({packageName: name, className: Node.name, value: Node.size});
   }
 
   recurse(null, flare);

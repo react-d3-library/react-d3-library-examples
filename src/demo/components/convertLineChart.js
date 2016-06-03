@@ -1,6 +1,7 @@
 import React from 'react';
 import lineData from './../d3-examples/lineChart';
-import LineChart from './d3Components/LineChart';
+import rd3 from 'react-d3-library';
+const LineChart = rd3.LineChart;
 
 module.exports = React.createClass({
 
