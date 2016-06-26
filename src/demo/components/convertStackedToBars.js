@@ -1,7 +1,6 @@
 import React from 'react';
 import node from './../d3-examples/stackedToBars';
 import D3StateContainer from './d3Components/Component';
-import ReactDom from 'react-dom';
 import Buttons from './stackToBarsButtons';
 
 module.exports = React.createClass({
@@ -13,7 +12,6 @@ module.exports = React.createClass({
   componentDidMount: function() {
     this.setState({d3: node});
   },
-
  
   render: function() {
     return (

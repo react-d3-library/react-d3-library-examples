@@ -1,7 +1,6 @@
 import React from 'react';
 import node from './../d3-examples/dnaHelix';
 import D3StateContainer from './d3Components/Component';
-import ReactDOM from 'react-dom';
 
 module.exports = React.createClass({
 

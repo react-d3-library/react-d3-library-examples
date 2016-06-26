@@ -2,7 +2,6 @@ import React from 'react';
 import node from './../d3-examples/bestCanidate';
 import D3StateContainer from './d3Components/Component';
 
-
 module.exports = React.createClass({
 
   getInitialState: function() {

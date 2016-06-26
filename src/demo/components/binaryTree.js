@@ -1,8 +1,6 @@
 import React from 'react';
 import node from './../d3-examples/binaryTree';
-import rd3 from 'react-d3-library';
-
-const Component = rd3.Component;
+import D3StateContainer from './d3Components/Component';
 
 module.exports = React.createClass({
 
@@ -17,7 +15,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        <Component data={this.state.d3} />
+        <D3StateContainer data={this.state.d3} />
       </div>
     )
   }
